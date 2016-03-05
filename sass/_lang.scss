@@ -1,0 +1,61 @@
+@import 'variables';
+
+.lang_sw{
+    position: absolute;
+    top: 150px;
+    z-index: 10;
+	width: 70px;
+	right:0px;
+	padding: 5px 5px 0px 5px;
+    background-color: lightgray;
+    border-radius: 2px;
+	ul{
+		list-style:none;
+		margin:0px;
+	}
+	ul li{
+		padding-bottom: 5px;
+	}
+}
+
+.hide_but{   
+	position: absolute;
+    z-index: 10;
+    top: 150px;
+    height: 40px;
+    right: 65px;
+    background-color: lightgray;
+    padding: 4px ;
+    border-radius: 2px;
+}
+
+.show_but{    
+	position: absolute;
+    z-index: 10;
+    top: 150px;
+    height: 40px;
+    border-radius: 3px;
+    padding: 4px;
+    right: 0px;
+	display:none;
+	img{
+		transform: rotate(180deg);
+	}
+}
+
+.butt {   
+	cursor: pointer;
+	img{
+		height: 100%;
+		z-index: 11;
+	}   
+}
+	
+
+.lang-item a img{
+	height:35px;  
+	width: 100%;
+	}
+.lang_sw ul   { 
+	padding: 0px;
+}

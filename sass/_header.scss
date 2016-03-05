@@ -1,0 +1,391 @@
+@import 'variables';
+
+
+
+.admin-bar #fixed-header {
+	top: 32px;
+}
+
+#fixed-header-inner {
+    max-width: 1380px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#fixed-header-menu-image-image{
+	max-height: 34px;
+    padding: 2px;
+	display:none;
+	@media (max-width:$responsive-break-big) {
+		display:block !important;
+		@include transition(all $hdr-tr);
+	}
+}
+
+#fixed-header, #fixed-header a{
+	color:$header-highlight-color;
+}
+#fixed-header-inner{
+@include transition(all $hdr-tr);
+}
+#fixed-header {
+	background-color:$header-background-color;
+	margin-top: 0px;
+	padding: 8px 10px;
+	position: fixed;
+	border-bottom:0px;
+	//height:50px;
+	width: 100%;
+	z-index: 99998;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	@include transition(all $hdr-tr);
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	li a {
+		text-decoration: none;
+		text-align: center;
+		font-weight: normal  ;
+		display: block;
+		line-height: 30px; 
+		width:100%; 
+		height:100%; 
+		padding-right: 0px;
+		padding-left: 0px; 
+		@include transition(border $hdr-tr, color $hdr-tr);
+		font-family: $heading-font-light;
+		text-transform: uppercase;
+		font-size: 15px;
+		font-weight: bold;
+		border: 1px solid transparent;
+		
+		&:hover {
+			display: block;
+			border: 1px solid $header-highlight-color;
+		}
+		
+		&:active {
+			color:white
+		}
+		
+		@media (max-width: 850px) and (min-width:$responsive-break-big){
+			font-size:12px !important; 
+		}
+	}
+}
+
+#fixed-header-name {
+	float: left;
+	font-size: 32px;
+	line-height: 30px;
+	margin: 0;
+	margin-right: 50px;
+	    height: 34px;
+	//width:350px;
+	img {
+		display: block;
+		height: 110px;
+		width: auto;
+		
+		margin-top: 0px; 
+		border-radius:0px;
+		@include transition(height $hdr-tr);
+	}
+	@media (max-width:$responsive-break-big) {
+		padding-right: 10px;
+	}
+}
+
+#fixed-header-title{
+	font-family: $heading-font-light;
+	text-transform: uppercase;
+	float: left;
+	font-size: 32px;
+    line-height: 34px;
+	@include transition(border $hdr-tr, color $hdr-tr, margin $hdr-tr);
+	@media (max-width: 970px){
+		font-size:25px !important;
+	}
+	@media (max-width: 410px){
+		font-size:20px !important;
+	}
+}
+
+
+
+#fixed-header-menu {
+	float: left;
+	border-spacing: 5px 0px;
+	width:800px;
+	text-align: right;
+	margin-left:0px;
+    max-width: 95%;
+	padding-left: 0px;
+	 margin-bottom: 0px;
+	 display:table;
+	.current a{
+		border: 1px solid $header-highlight-color;
+		@include transition(all $hdr-tr);
+	}
+	li {
+		display: table-cell;
+		margin-left:5px;
+		margin-right:5px;
+			height: 34px;
+		font-size: 18px;
+		letter-spacing:0.8px;
+		@include transition(margin $hdr-tr);
+		&:hover {
+			display: table-cell;
+			font-size: 18px;
+			@media (max-width:$responsive-break-big) {
+				display: inline-block;
+			}
+		}
+		@media (max-width:$responsive-break-big) {
+			border-right:0px solid; 
+			text-align: center;
+			margin-left: 0px !important; 
+			width: 100%;
+			display: inline-block;
+		    
+		}
+		a{
+			@media (max-width:$responsive-break-big) {
+				color: $header-highlight-color !important;
+				width:100% !important;
+				
+			}
+		}
+	}
+	@media (max-width:$responsive-break-big) {
+		width: 250px !important;
+		background-color: $header-background-color; 
+		max-width: 100vw;
+		display: none;
+		position: absolute;
+		right: 0px;
+		@include transition(position $hdr-tr);
+		top: 50px;
+		text-transform: uppercase;
+		margin-left: 0px;
+		padding-left: 0px;
+		padding-bottom: 0px;
+	}
+}
+
+		.srcfi{
+			box-shadow: none;
+			height: 34px;
+			padding: 5px;
+			font-family: $heading-font-light;
+			font-weight: 700;
+			border: 0px;
+			float: left;
+			background: transparent;
+			font-size: 15px;
+			text-transform: uppercase;
+			padding-bottom: 7px;
+		}
+		.srcim{
+			padding: 0px;
+			height: 100%;
+			border: 0px;
+			background: none;
+			width:34px;
+		}
+		.srcbt{
+			border: 0px;
+			height: 33.5px;
+			padding: 0px;
+			margin: 0px;
+			margin-top: -1px;
+			margin-right: -1px;
+			border-left: 1px solid $header-highlight-color;
+
+		}
+		.srcinput{
+			border: 0px;
+			height: 33.5px;
+			padding: 0px;
+			margin: 0px;
+			margin-right:5px;
+			border-left: 1px solid $header-highlight-color;
+			float: right;
+			display:none;
+			@media (max-width:$responsive-break-big) {
+				display:block;
+			}
+		}
+		.srcbt.whitTr{
+			border-left: 1px solid white;
+		}
+		.search-form-header{
+			float:left;
+			margin-left: 5px;
+			@include transition(margin $hdr-tr);
+			@media (max-width:$responsive-break-big) {
+				position: absolute;
+				margin-top: 42px;
+				background: $header-background-color;
+				right: 0px;
+				display:none;
+			}
+		}
+		
+		.srcfi::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			color: $header-highlight-color;
+			@include transition(color $hdr-tr);
+		}
+		.srcfi:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			color: $header-highlight-color;
+			@include transition(color $hdr-tr);
+			
+		}
+		.srcfi::-moz-placeholder { /* Mozilla Firefox 19+ */
+			color: $header-highlight-color;
+			@include transition(color $hdr-tr);
+			
+		}
+		.srcfi:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: $header-highlight-color;
+			@include transition(color $hdr-tr);
+		}
+		#srcdv{
+		    border: 1px solid $header-highlight-color;
+			height: 34px;
+			@include transition(border-color $hdr-tr);
+		}
+		#srcdv.whitTr{
+			 border: 1px solid white;
+		}
+		.srcfm label{
+		    margin-bottom: 0px;
+			height:34px;
+		}
+		
+		.scroll_down{
+			transition: -webkit-transform .2s ease-out;
+			transition: transform .2s ease-out;
+			-webkit-transform: translateY(-80px);
+			-ms-transform: translateY(-80px);
+			transform: translateY(-80px);
+		}
+		.whitTr .sub-menu{
+			border: 1px solid $header-highlight-color-top !important;
+			background:transparent  !important;
+		}
+		#fixed-header-menu .sub-menu{
+			position: absolute;
+			padding-left: 0px;
+			border: 1px solid $header-highlight-color;
+			background:$header-background-color;
+			display:none;
+			@media (max-width:$responsive-break-big) {
+					width: 200px !important;
+					position: relative;
+					margin-left: 50px;
+					padding-left: 0px;
+					border: 0px;
+					background: transparent;
+					
+			}
+			li {
+				@media (max-width:$responsive-break-big) {
+					    border-left: 1px solid !important;
+						  
+				}
+				a{
+					@media (max-width:$responsive-break-big) {
+							
+					}
+				}
+				
+			}
+		}
+		#fixed-header-menu .sub-menu > li > a{
+			border-left:none !important;
+			border-right:none !important;
+		}
+		    
+		#fixed-header-menu .sub-menu > :first-child > a{
+			border-top: none !important;
+		}
+		#fixed-header-menu .sub-menu > :last-child > a{
+			border-bottom: none !important;
+		}
+		
+		#fixed-header-men .sub-menu{
+			display:none;
+		}
+		#fixed-header-menu .sub-menu > li{
+			margin: 0px;
+			width: 100%;
+			text-align: center;
+			display: inline-block;
+		}
+		.highlight-border{
+			border:1px solid $header-highlight-color !important;
+		}
+		#fixed-header-title > .topLogo{
+			display:none;
+			height: 70px;
+			margin-top: -18px;
+		}
+		#fixed-header-title > .restLogo{
+			height: 34px;
+			display:none;
+		}
+		
+		
+		.whitTr{
+	background-color:transparent !important;
+	color:$header-highlight-color-top !important;
+	@include transition(all $hdr-tr);
+	a{
+		color:$header-highlight-color-top !important;
+	}
+	#fixed-header-title > .topLogo{
+		//display:block;
+	}
+	#fixed-header-title > .restLogo{
+		//display:none;
+	}
+}
+	.whitTrS::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			color: $header-highlight-color-top !important;
+			@include transition(color $hdr-tr);
+		}
+		.whitTrS:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			color:   $header-highlight-color-top !important;
+			@include transition(color $hdr-tr);
+			
+		}
+		.whitTrS::-moz-placeholder { /* Mozilla Firefox 19+ */
+			color:   $header-highlight-color-top !important;
+			@include transition(color $hdr-tr);
+			
+		}
+		.whitTrS:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color:  $header-highlight-color-top !important;
+			@include transition(color $hdr-tr);
+		}
+
+@media (max-width:$responsive-break-big) {
+	#fixed-header-menu-image-div {
+		cursor: pointer;
+		float: right;
+		height: 34px;
+		width: 34px;
+		background:$header-highlight-color;
+	}
+
+}
+
+.whitTrGrad{
+	background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%) !important;
+	@include transition(color $hdr-tr);
+}
