@@ -37,7 +37,7 @@ Save your settings and refresh page. Everything should work afterwards.
 
 #### Some setting is not saving at all. I have eliminated all other causes. What should I do?
 
-Unfortunately, you have encountered a bug. Please submit a report on theme website via contact form: http://somnium.8u.cz/en/#contact
+Unfortunately, you have encountered a bug. Please submit a report on theme website via contact form: http://somnium.8u.cz/en/#contact or make a pull request on GitHub: https://github.com/oberreiterm/somnium
 
 
 
