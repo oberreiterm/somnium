@@ -722,10 +722,14 @@ $(window).ready(function() {
 					$("#fixed-header").css({height:'50px'});
 					if(customizer.header_gradient!=0){$("#fixed-header ").removeClass("whitTrGrad");};
 					
-					$('.topLogo').stop().fadeOut("fast", function() {
+					if($('.topLogo').length>0){
+						$('.topLogo').stop().fadeOut("fast", function() {
+							$("#fixed-header ").removeClass("whitTr");
+							$('.restLogo').stop().fadeIn();
+						});
+					}else{
 						$("#fixed-header ").removeClass("whitTr");
-						$('.restLogo').stop().fadeIn();
-					});
+					}
 					HeaderRecalculate();
 				
 				}
