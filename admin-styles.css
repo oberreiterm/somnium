@@ -1,0 +1,46 @@
+.meta-td input{
+	width: 450px;
+}
+
+.meta-td, .meta-th{
+	display: inline-block;
+}
+.meta-th{
+	padding-right: 15px;
+	width: 300px;
+}
+.meta-row{
+	margin-bottom: 15px;
+}
+.meta-th > h1{
+	padding-bottom: 15px;
+}
+
+.customize-control-widget_form .widget-control-save{
+	display:block;
+}
+.upload_image_button{
+    margin-top: 10px !important;
+}
+#TB_window{
+	z-index: 500001 !important;
+	}
+.textarea_widget{
+	min-width: 235px;
+}
+
+.input-number{
+	width:60px !important;
+}
+.units-select{
+	min-width: 0px !important;
+    width: 52px;
+}
+
+.font-select{
+	width: 190px !important;
+}
+
+.apply_compile{
+	    vertical-align: top;
+}
