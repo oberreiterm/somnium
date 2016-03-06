@@ -402,7 +402,7 @@ function customizer_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'blog-txt', array('sanitize_callback' => 'sanitize_text_field'));
 
-	$wp_customize->add_control(  'sidebarN', array(
+	$wp_customize->add_control(  'blog-txt', array(
 
 	      	'label'    => __('Blog Index Page Text', 'somnium' ), 
 
