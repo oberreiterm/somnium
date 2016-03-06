@@ -754,7 +754,7 @@ $(window).ready(function() {
 	
 	$(window).ready(function () {
 		
-		$(window).scrollTop(1);
+	
 		$("#fixed-header-menu-image-image").click(function(){
 			$("#fixed-header-menu").slideToggle("fast");
     	});
