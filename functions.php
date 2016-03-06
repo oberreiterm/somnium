@@ -142,14 +142,11 @@ function somnium_paging_nav() {
 		wp_enqueue_style( 'font-awesome',   get_template_directory_uri(). '/fonts/font-awesome.css' );
 		wp_enqueue_style( 'libs-style',   get_template_directory_uri(). '/css/libs.min.css' );
 		
-		wp_deregister_script( 'jquery' );
-    	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-    	wp_enqueue_script( 'jquery' );
 	
 		
 		wp_enqueue_script( 'main-script',  get_template_directory_uri(). '/js/script.min.js', array('jquery'), false, true  );
 		
-		wp_enqueue_script( 'libs-script',  get_template_directory_uri(). '/js/libs.min.js',  array('jquery') ,false ,true);
+		wp_enqueue_script( 'libs-script',  get_template_directory_uri(). '/js/libs.min.js',  array('jquery') );
 		
 		
 
