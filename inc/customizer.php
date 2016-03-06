@@ -1733,7 +1733,7 @@ function generate_js()
 			echo'});';
          echo'</script>';
 }
-add_action( 'wp_footer', 'generate_js', 100);
+add_action( 'wp_head', 'generate_js', 100);
 
 
 
