@@ -122,7 +122,7 @@ $(window).ready(function(){
  $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
   console.log( location.hostname +'  ' +this.hostname);
-	if(this.parent('.comments-area') != ''){
+	if($(this).parent('.comments-area') != ''){
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 		  var target = $(this.hash);
 		  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -754,7 +754,6 @@ $(window).ready(function() {
 	
 	$(window).ready(function () {
 		
-	
 		$("#fixed-header-menu-image-image").click(function(){
 			$("#fixed-header-menu").slideToggle("fast");
     	});
