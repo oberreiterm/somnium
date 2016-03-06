@@ -1304,7 +1304,7 @@ function profilepic_social($ID,$DIR){
 						}
 					}
 					$imgCred = get_post_meta(get_the_ID(), 'img_credit', true);
-					if(!NullEmpty($imgCred)){echo'<a href="'.$imgCred .'"><img alt="image-credit" class="image-credit" title="'.__('Image Credit','somnium').'" src="'.get_template_directory_uri().'/images/icon-camera.png"></a>'; }
+					if(!NullEmpty($imgCred) && is_single()){echo'<a href="'.$imgCred .'"><img alt="image-credit" class="image-credit" title="'.__('Image Credit','somnium').'" src="'.get_template_directory_uri().'/images/icon-camera.png"></a>'; }
 					echo'</span>';
 				}
 				
