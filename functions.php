@@ -43,6 +43,35 @@
 		return $query;
 	}
 	
+	/*
+	* Adds Open Graph Protocol and charset
+	* Since 0.7.1.2
+	*/
+	function add_metaX() {
+		echo'<meta charset="'.get_bloginfo('charset').'">';
+		if (is_single()){
+			global $post;
+			
+			$author = get_the_author_meta('user_nicename', $post->post_author);
+			echo'<meta name="author" content="'.$author.'">';
+			
+			$desc = field_excerpt($post->ID , $post->post_content, 30,'...');
+			echo'<meta name="description" content="'.$desc.'" />'; 
+			
+			if(has_post_thumbnail($post->ID)) {
+				
+				$featuredImage = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), array(253,253));
+				echo'<meta property="og:image:url" content="'.$featuredImage[0].'" />
+				<meta property="og:image:height" content="253" />
+				<meta property="og:image:width" content="253" />';
+			} 
+			
+		}else{
+			echo'<meta property="og:title" content="'.get_bloginfo('name').'">';
+			echo'<meta property="og:description" content="'.get_bloginfo('description').'">';
+		}
+	}
+	add_action( 'wp_enqueue_scripts', 'add_metaX' );	
 
 function somnium_paging_nav() {
 	// Don't print empty markup if there's only one page.
