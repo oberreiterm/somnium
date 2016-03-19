@@ -725,7 +725,9 @@ $(window).ready(function() {
 						$('.topLogo').stop().fadeOut("fast", function() {
 							$("#fixed-header ").removeClass("whitTr");
 							$('.restLogo').stop().fadeIn();
+							HeaderRecalculate();
 						});
+						HeaderRecalculate();
 					}else{
 						$("#fixed-header ").removeClass("whitTr");
 					}
