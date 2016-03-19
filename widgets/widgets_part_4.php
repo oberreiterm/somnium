@@ -18,8 +18,8 @@ class sl_wid extends WP_Widget {
 			$checkb = 'contr';
 		}else{$checkb = '';} 
 		echo'<div class="cst-sl-inner '.$checkb.'">';
-		echo'<h1 style="color:'.$main[3].'" class="slider-title">'.$main[0].'</h1>
-				<h3 style="color:'.$main[5].'"  class="slider-descr">'.$main[4].'</h3>
+		echo'<h1 style="color:'.$main[3].'" class="slider-title"><span>'.$main[0].'</span></h1>
+				<h3 style="color:'.$main[5].'"  class="slider-descr"><span>'.$main[4].'</span></h3>
 				<div class="buttons">
 					<a href="'.$main[9].'" class=" custom-button" style="color:'.$main[8].'; border-color:'.$main[8].'">'.$main[7].'</a>
 				</div>
@@ -91,8 +91,8 @@ class html_vid_wid extends WP_Widget {
 			}else{$checkb = '';} 
 			echo'<div class="cst-sl-inner '.$checkb.'">';
 			echo'<div class="cst-sl-inner cst-sl-html5" style="background-image:url('.$main[6].')">
-				<h1 style="color:'.$main[3].'" class="slider-title">'.$main[0].'</h1>
-				<h3 style="color:'.$main[5].'"  class="slider-descr">'.$main[4].'</h3>
+				<h1 style="color:'.$main[3].'" class="slider-title"><span>'.$main[0].'</span></h1>
+				<h3 style="color:'.$main[5].'"  class="slider-descr"><span>'.$main[4].'</span></h3>
 				<div class="buttons">
 					<a href="'.$main[9].'" class=" custom-button " style="color:'.$main[8].'; border-color:'.$main[8].'">'.$main[7].'</a>
 				</div>
@@ -240,9 +240,9 @@ class sl_q_wid extends WP_Widget {
 				$checkb = 'contr';
 			}else{$checkb = '';} 
 			echo'<div class="cst-sl-inner '.$checkb.'">';
-			echo'<h1 style="color:'.$main[0].'" class="slider-title">' . get_the_title() . '</h1>';
-			echo'<h3 style="color:'.$main[1].'"  class="slider-descr">';
-			echo field_excerpt(get_the_ID() , get_the_excerpt(), $main[2]) .'</h3>
+			echo'<h1 style="color:'.$main[0].'" class="slider-title"><span>' . get_the_title() . '</span></h1>';
+			echo'<h3 style="color:'.$main[1].'"  class="slider-descr"><span>';
+			echo field_excerpt(get_the_ID() , get_the_excerpt(), $main[2]) .'</span></h3>
 			<div class="buttons"><a href="' . get_permalink() . '" class=" custom-button " style="color:'.$main[4].'; border-color:'.$main[4].'">'.$main[3].'</a></div></div>';
 			echo'</div>'; 
 		}			
