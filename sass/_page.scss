@@ -317,13 +317,13 @@ h3.comment-reply-title{
 	}	
 	}
 	
-	.container_image_post article img{
+	.container_image_post img{
 		max-width: 100%;     
 		height: auto;
 		padding: 20px 0px 20px 0px;
 		display:block;
 	}
-	.container_image_post article img.aligncenter{
+	.container_image_post img.aligncenter{
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -414,7 +414,7 @@ h3.comment-reply-title{
 	.post_ln:empty{
 		display:none;
 	}
-	.article-image-content article.initial:first-letter{
+	.article-image-content div.initial:first-letter{
 		font-size:60px;
 		line-height: 50px; 
 		padding-top: 3px; 
