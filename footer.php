@@ -29,7 +29,7 @@ echo'<footer class="footer_class" style="background-image:url('.$image.');">
 		echo'<div class="copyright">'.$copy.' | © '; if(date('Y')== $copyY || ''== $copyY){echo date('Y');} else{echo $copyY.'–'.date('Y');} echo'<br>'; 
 		if($credits==1){
 			esc_html_e( 'Powered by','somnium');
-			echo ' '.$theme->get( 'Name' ) . " v" . $theme->get( 'Version' );
+			echo ' <a href="http://somnium.8u.cz/">'.$theme->get( 'Name' ) . '</a> v' . $theme->get( 'Version' );
 		}
 		echo'</div>';
 	?>
