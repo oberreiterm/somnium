@@ -1,4 +1,4 @@
-# Somnium
+# Somnium v0.7.1.3
 ##### http://somnium.8u.cz/en/
 ```
 Theme Name: Somnium 
