@@ -431,6 +431,20 @@ function customizer_register( $wp_customize ) {
 
 	)));
 	
+	$wp_customize->add_setting( '404-bc', array('sanitize_callback' => 'sanitize_text_field'));
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, '404-bc', array(
+
+	      	'label'    => __('Page 404 Background Image', 'somnium'),
+			
+	      	'section'  => 'general',
+
+	      	'settings' => '404-bc',
+
+			'priority'    => 2,
+
+	)));
+	
 	
 	$wp_customize->add_setting( 'blog-bc', array('sanitize_callback' => 'sanitize_text_field'));
 
@@ -1139,7 +1153,7 @@ function customizer_register( $wp_customize ) {
 	));
 	
 	
-	$wp_customize->add_setting( 'css', array('sanitize_callback' => 'sanitize_text_field'));
+	$wp_customize->add_setting( 'css', array('sanitize_callback' => 'wp_kses_post'));
 
 	$wp_customize->add_control(  'css', array(
 
@@ -1564,7 +1578,7 @@ function somnium_advanced_css(){
 		}
 	}
 
-	.postX-sticky, .article-sticky, .post_ln:hover, #primary .date, .site-content .date, .page-numbers:hover, .page-numbers.current, .wid-post .date_wid, .date_wid, button, input[type="button"], input[type="reset"], input[type="submit"]{ 
+	.social_author > li, .postX-sticky, .article-sticky, .post_ln:hover, #primary .date, .site-content .date, .page-numbers:hover, .page-numbers.current, .wid-post .date_wid, .date_wid, button, input[type="button"], input[type="reset"], input[type="submit"]{ 
 		background-color:'.get_theme_mod('content-highlight-color').';
 	}
 		
