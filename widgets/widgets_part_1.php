@@ -243,16 +243,16 @@ class txtfld_wid extends WP_Widget {
 				break;	
 		}
 		
-		echo'">
+	echo'">
 		<div class="section-container">
 			<div class="col-8-of col-md-12">
 				<div class="mop-text section-txt col-md-12" data-sr="'.$main[5].'">';
 				if(NullEmpty($main[4])){
-					echo'<h2 class="link-title mop-title" style="color:'.$main[2].'">'.$main[0].'</h2>';
-					echo'<p style="color:'.$main[3].'">'.$main[1].'<p>';
+					echo'<h2 class="link-title mop-title" style="color:'.$main[2].'; font-size:'.$main[7].$main[8].';">'.$main[0].'</h2>';
+					echo'<p style="color:'.$main[3].'; font-size:'.$main[9].$main[10].';">'.$main[1].'<p>';
 				}else{
-					echo'<a href="'.$main[4].'" ><h2 class="link-title mop-title" style="color:'.$main[2].'">'.$main[0].'</h2></a>';
-					echo'<a href="'.$main[4].'" ><p style="color:'.$main[3].'">'.$main[1].'<p></a>';
+					echo'<a href="'.$main[4].'; font-size:'.$main[7].$main[8].';" ><h2 class="link-title mop-title" style="color:'.$main[2].'">'.$main[0].'</h2></a>';
+					echo'<a href="'.$main[4].'; font-size:'.$main[9].$main[10].';" ><p style="color:'.$main[3].'">'.$main[1].'<p></a>';
 				}
 					
 				echo'
