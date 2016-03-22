@@ -168,7 +168,7 @@ function somnium_paging_nav() {
 	
 	// Enqueueing stylesheets and scripts
 	function somnium_scripts(){
-		wp_enqueue_style( 'font-awesome',   get_template_directory_uri(). '/fonts/font-awesome.css' );
+		wp_enqueue_style( 'font-awesome',   get_template_directory_uri(). '/fonts/font-awesome.min.css' );
 		wp_enqueue_style( 'libs-style',   get_template_directory_uri(). '/css/libs.min.css' );
 		
 	

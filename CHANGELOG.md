@@ -8,6 +8,13 @@ Changelog
 ##### Author URI: http://oberreiter.8u.cz
 ##### License: GPL3 #####
 
+### 0.7.1.3 (22/3/2016)
+- multiple CSS fixes
+- JS documented, fixed
+- removed lines removal from custom CSS field
+- improved responsive behavior
+- fixed 404 page
+
 ### 0.7.1.2 (5/3/2016)
 - now W3C Validated
 - multiple markup errors fixed
