@@ -148,7 +148,8 @@
 	}
 	input[type="search"]{
 	    width: 170px;
-	} 
+		border: 1px solid lightgray;
+	}  
 }
 
 .comment-form-comment{
@@ -305,7 +306,7 @@ h3.comment-reply-title{
 
 	.entry-title-cst{
 	    color: white;
-		margin-left: -10px;
+		margin-left: -6px;
 		margin-bottom: 0px;
 			@media screen and (max-width: $responsive-break-big) and (min-width: $responsive-break-medium){
 		font-size: 40px;
@@ -317,7 +318,7 @@ h3.comment-reply-title{
 	}	
 	}
 	
-	.container_image_post img{
+	.container_image_post .entry-content img{
 		max-width: 100%;     
 		height: auto;
 		padding: 20px 0px 20px 0px;
@@ -386,6 +387,7 @@ h3.comment-reply-title{
 		padding: 9px 15px 12px 15px;
 		transition: $button-transition;
 		line-height: 15px;
+		max-width: 49%; 
 	}	 
 	
 	.post_ln:hover{
@@ -654,11 +656,16 @@ h3.comment-reply-title{
 
 .entry-header-BCimage{
 	width: 100%;
-    max-height: 500px;
+    max-height: 600px;
     background-size: cover;
     background-position: center;
 	margin-top: 15px;
 }
+
+.entry-header-BCimage img{
+	max-width: 100%;
+	max-height: 600px
+}	
 
 .classic-post-sidebar{
 	margin-top: 60px;
@@ -926,6 +933,14 @@ padding:0px;
 	opacity: 0.5;
 	transition: $button-transition;
 	display:none;
+	@media (max-width: $responsive-break-big) {
+			bottom: 20px;
+			right: 20px;		
+	}
+	@media (max-width: $responsive-break-medium) {
+			bottom: 10px;
+			right: 10px;		
+	}
 }
 
 .somnium-scroll-top:hover{
@@ -958,7 +973,7 @@ padding:0px;
     vertical-align: bottom;
     position: relative;
     padding-bottom: 0px; 
-	    padding-top: 50px;
+	    padding-top: 80px;
 }
 
 .top-outer-container-title {
@@ -978,7 +993,7 @@ padding:0px;
 							
 						}
 						.bc-container-post {
-							height: 180px;
+							min-height: 180px;
 							margin-bottom: 30px;
 							    overflow: hidden;
 
@@ -994,7 +1009,37 @@ padding:0px;
 						.entry-title-cst{
 							margin-bottom:0px;
 						}
-.entry-header-BCimage img{
-	max-width: 100%;
-}					
-#fixex-header .sub-menu{display:none;}
+				
+#fixex-header .sub-menu{
+	display:none;
+}
+
+#fixed-header[data-front-page-slider="true"] .restLogo{
+	margin-top:-10px;
+} 
+.article-image-content div.initial:first-letter {
+	font-size: 60px; 
+	line-height: 50px; 
+	padding-top: 3px; 
+	padding-right: 5px; 
+	padding-left: 0px; 
+	float: left; 
+} 
+img{
+	height:auto
+} 
+.wp-caption-text{ 
+	text-align: left; 
+	padding-top: 5px !important; 
+	padding-bottom: 0px !important;
+}
+
+.frown{
+	font-size: 200px;
+	float: left;
+    padding: 0px 40px 0px 0px;
+}
+
+.entry-header-error h2{
+    padding-top: 60px;
+}
