@@ -371,7 +371,7 @@ class hdr extends WP_Widget {
 			$main[$i] = $instance['in'.$i];			
 		}
 		echo $args['before_widget'];
-		echo'<style scoped>.whitTr #fixed-header-title{width:'.$main[3].'px;} #fixed-header-title{width:'.$main[4].'px;}</style>';
+		echo'<style>.whitTr #fixed-header-title{width:'.$main[3].'px;} #fixed-header-title{width:'.$main[4].'px;}</style>';
 		if (!filter_var($main[0], FILTER_VALIDATE_URL) === false && !filter_var($main[2], FILTER_VALIDATE_URL) === false) {
 			$fix_hdr_title_top= '<img class="topLogo"  src="' . esc_attr( $main[0] ) . '" alt="' . esc_attr( get_bloginfo( 'description' ) ) . '" />';
 			$fix_hdr_title= '<img class="restLogo"  src="' . esc_attr( $main[2] ) . '" alt="' . esc_attr( get_bloginfo( 'description' ) ) . '" />';
