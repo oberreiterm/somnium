@@ -3,17 +3,23 @@ Changelog
 ##### Theme Name: Somnium 
 ##### Theme URI: http://somnium.8u.cz
 ##### Description: Responisive, multilanguage theme
-##### Version: 0.7.1.2
+##### Version: 0.7.1.6
 ##### Author: Michal Oberreiter
 ##### Author URI: http://oberreiter.8u.cz
 ##### License: GPL3 #####
 
-### 0.7.1.3 (22/3/2016)
+### 0.7.1.6 (13/4/2016)
+- fixed sub menus
+- sub menus can now have multiple instances
+- added sub menu auto width calculation
+
+### 0.7.1.3/4/5 (22/3/2016)
 - multiple CSS fixes
 - JS documented, fixed
 - removed lines removal from custom CSS field
 - improved responsive behavior
 - fixed 404 page
+- hot fixes
 
 ### 0.7.1.2 (5/3/2016)
 - now W3C Validated
