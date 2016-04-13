@@ -552,8 +552,8 @@
 		titleAdjust();
 		$('#fixed-header-menu .sub-menu').each(function(){
 			var maxW = 0;
-			console.log($(this).children('li').length);
-			console.log($(this).children('li:nth-child(1)').children('a').innerWidth());
+			//console.log($(this).children('li').length);
+			//console.log($(this).children('li:nth-child(1)').children('a').innerWidth());
 			for(i=0;i<$(this).children('li').length;i++){
 				var temp = $(this).children('li:nth-child(1)').children('a').innerWidth()
 				if(temp>maxW){
