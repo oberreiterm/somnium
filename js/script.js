@@ -580,7 +580,6 @@
 		$("#fixed-header  li a").css({paddingRight: 0});
 		HeaderRecalculate();
 		titleAdjust();
-		subMenuRecalculate();
 	});
 	
 	$(window).ready(function() {
