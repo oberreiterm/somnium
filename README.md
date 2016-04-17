@@ -8,7 +8,7 @@ Author URI: http://www.oberreiter.8u.cz/
 Description: Powerful, easy to use, responsive, multilanguage - that is Somnium.
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, light, one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-colors, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-colors, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: somnium
 Documentation: http://somnium.8u.cz/en/somnium-docs/
 ```
