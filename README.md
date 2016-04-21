@@ -136,3 +136,9 @@ Unfortunately, you have encountered a bug. Please submit a report on theme websi
 * Tom Moor, http://tommoor.com
 * Copyright (c) 2011 Tom Moor
 * MIT Licensed
+
+#### fullpage.js
+* https://github.com/alvarotrigo/fullPage.js/
+* by Alvaro Trigo
+* MIT Licensed
+
