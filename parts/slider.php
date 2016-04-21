@@ -14,7 +14,7 @@ $slider_display2=get_theme_mod('slider-display',1);
 
 
 if($slider_display2 == 1){
-	echo'<section class="slider-custom" id="slider-custom" >
+	echo'<section class="slider-custom section" id="slider-custom" >
 		<div class="button-hoSec button-hoSecNext">
 			<div class="cst-next cst-button"></div>
 		</div>
