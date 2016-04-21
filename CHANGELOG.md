@@ -3,10 +3,17 @@ Changelog
 ##### Theme Name: Somnium 
 ##### Theme URI: http://somnium.8u.cz
 ##### Description: Responisive, multilanguage theme
-##### Version: 0.7.1.6
+##### Version: 'Apollo' (0.7.2)
 ##### Author: Michal Oberreiter
 ##### Author URI: http://oberreiter.8u.cz
 ##### License: GPL3 #####
+
+### 0.7.2 (20/4/2016)
+- fullpage.js integration
+- Presenation mode added 
+- Presenation mode options: enable/disable, autoplay, navigation, autoplay delay, auto scroll, scrollreveal reset, animation speed, controls
+- multiple bug fixes
+- major version naming introduced, since now 0.7.x versions are called "Somnium 'Apollo' (0.7.x)", names will be chosen according to Roman gods and goddesses
 
 ### 0.7.1.6 (13/4/2016)
 - fixed sub menus

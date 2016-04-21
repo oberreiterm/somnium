@@ -1,17 +1,15 @@
 <?php get_header(); 
 
-$my_slider = get_theme_mod('my_slider',1);
-if($my_slider == 1 ):
-	include get_template_directory() . "/parts/slider.php";
-endif;
-	
-
 
 $sidebar = get_theme_mod('sidebar-type','none');
 $sidN = get_theme_mod('sidebarN',0);
 
 if($sidebar == 'none'){
-	echo'<div id="content" class="site-content">';
+	echo'<div id="content" class="site-content front_p site-front">';
+			$my_slider = get_theme_mod('my_slider',1);
+			if($my_slider == 1 ):
+				include get_template_directory() . "/parts/slider.php";
+			endif;
 			if ( 'posts' == get_option('show_on_front') ) {
 				dynamic_sidebar( 'sidebar-section' );
 				$sidN = intval($sidN);
@@ -22,10 +20,13 @@ if($sidebar == 'none'){
 			}else if ( 'page' == get_option('show_on_front') ) {
 				get_template_part( 'page' ); 
 			}
-	echo'</div>';
-	get_footer(); 
+		get_footer(); 
 }else if($sidebar == 'right'){
-	echo'<div id="content-sidebar" class="content-sidebar">';
+	$my_slider = get_theme_mod('my_slider',1);
+	if($my_slider == 1 ):
+		include get_template_directory() . "/parts/slider.php";
+	endif;
+	echo'<div id="content-sidebar" class="content-sidebar front_p">';
 		echo'<div class="content-container col-md-9">';
 		if ( 'posts' == get_option('show_on_front') ) {
 			dynamic_sidebar( 'sidebar-section' );
@@ -40,12 +41,15 @@ if($sidebar == 'none'){
 		echo'</div>';
 		echo'<div class="sidebar-container col-md-3">';
 			get_sidebar();
-		echo'</div>';
-		echo'<div class="clearer"></div>';
 	echo'</div>';
+		echo'<div class="clearer"></div>';
 	get_footer(); 
 }else if($sidebar == 'left'){
-	echo'<div id="content-sidebar" class="sidebar-l content-sidebar">';
+	$my_slider = get_theme_mod('my_slider',1);
+	if($my_slider == 1 ):
+		include get_template_directory() . "/parts/slider.php";
+	endif;
+	echo'<div id="content-sidebar" class="sidebar-l front_p content-sidebar">';
 		echo'<div class="sidebar-container col-md-3">';
 			get_sidebar();
 		echo'</div>';
@@ -62,10 +66,9 @@ if($sidebar == 'none'){
 		}
 		echo'</div>';
 		echo'<div class="clearer"></div>';
-	echo'</div>';
-	get_footer(); 
+	get_footer(); 		
 }
-	
+
 	
 	
 ?>

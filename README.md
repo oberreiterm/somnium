@@ -1,8 +1,7 @@
-# Somnium v0.7.1.6
+# Somnium 'Apollo' (0.7.2)
 ##### http://somnium.8u.cz/en/
 ```
 Theme Name: Somnium 
-Theme URI: http://somnium.8u.cz/
 Author: Michal Oberreiter
 Author URI: http://www.oberreiter.8u.cz/
 Description: Powerful, easy to use, responsive, multilanguage - that is Somnium.
