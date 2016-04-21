@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Somnium v0.1\n"
-"POT-Creation-Date: 2016-03-22 22:48+0100\n"
-"PO-Revision-Date: 2016-03-22 22:49+0100\n"
+"POT-Creation-Date: 2016-04-21 14:01+0200\n"
+"PO-Revision-Date: 2016-04-21 14:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -40,13 +40,12 @@ msgstr ""
 "X-Poedit-SearchPath-14: sidebar.php\n"
 "X-Poedit-SearchPath-15: single.php\n"
 "X-Poedit-SearchPath-16: inc/customizer.php\n"
-"X-Poedit-SearchPath-17: parts/header.php\n"
-"X-Poedit-SearchPath-18: parts/slider.php\n"
-"X-Poedit-SearchPath-19: widgets/widgets_part_1.php\n"
-"X-Poedit-SearchPath-20: widgets/widgets_part_2.php\n"
-"X-Poedit-SearchPath-21: widgets/widgets_part_3.php\n"
-"X-Poedit-SearchPath-22: widgets/widgets_part_4.php\n"
-"X-Poedit-SearchPath-23: widgets/widgets_part_5.php\n"
+"X-Poedit-SearchPath-17: parts/slider.php\n"
+"X-Poedit-SearchPath-18: widgets/widgets_part_1.php\n"
+"X-Poedit-SearchPath-19: widgets/widgets_part_2.php\n"
+"X-Poedit-SearchPath-20: widgets/widgets_part_3.php\n"
+"X-Poedit-SearchPath-21: widgets/widgets_part_4.php\n"
+"X-Poedit-SearchPath-22: widgets/widgets_part_5.php\n"
 
 #: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
@@ -193,7 +192,7 @@ msgid "Post Editor"
 msgstr "Editor příspěvků"
 
 #: admin-functions.php:726 admin-functions.php:959 inc/customizer.php:1308
-#: widgets/widgets_part_1.php:850 widgets/widgets_part_1.php:1008
+#: widgets/widgets_part_1.php:854 widgets/widgets_part_1.php:1012
 #: widgets/widgets_part_2.php:267 widgets/widgets_part_4.php:42
 #: widgets/widgets_part_4.php:149
 msgid "Background Image"
@@ -473,7 +472,7 @@ msgstr ""
 msgid "[Read more...]"
 msgstr "[Více...]"
 
-#: footer.php:31
+#: footer.php:28
 msgid "Powered by"
 msgstr "Běží na"
 
@@ -889,6 +888,79 @@ msgstr "Standardní fixovaný"
 msgid "Displayed on scroll up"
 msgstr "Zobrazit pouze při scrollování nahoru"
 
+#: inc/customizer.php:1531
+msgid "Presentation Mode"
+msgstr "Režim prezentace"
+
+#: inc/customizer.php:1545
+msgid "Enable Presentation Mode"
+msgstr "Povolit režim prezentace"
+
+#: inc/customizer.php:1564
+msgid "Enable Autoplay"
+msgstr "Povolit automatické přehrávání"
+
+#: inc/customizer.php:1583
+msgid "Autoplay Time"
+msgstr "Čas automatického přehrávání"
+
+#: inc/customizer.php:1585 inc/customizer.php:1690
+msgid "Time in miliseconds"
+msgstr "Čas v milisekundách"
+
+#: inc/customizer.php:1602
+msgid "Delay Time"
+msgstr "Doba opoždění"
+
+#: inc/customizer.php:1604
+msgid "Delay after mouse wheel movement before restarting autoplay"
+msgstr ""
+"Čas mezi posunutím kolečkem myši a restartováním automatického přehrávání"
+
+#: inc/customizer.php:1622
+msgid "Scroll by slides"
+msgstr "Posouvání po snímcích"
+
+#: inc/customizer.php:1624
+msgid "Enables auto scrolling"
+msgstr "Zapnout automatické posouvání"
+
+#: inc/customizer.php:1644
+msgid "Display Point Navigation"
+msgstr "Zobrazit bodovou navigaci"
+
+#: inc/customizer.php:1646
+msgid "Navigation on the right side of screen"
+msgstr "Navigace na pravé straně obrazovky"
+
+#: inc/customizer.php:1666
+msgid "Reset ScrollReveal Animations"
+msgstr "Resetovat ScrollReveal animace"
+
+#: inc/customizer.php:1668
+msgid "Reset animation for autoplay"
+msgstr "Resetování animace pro automatický posun"
+
+#: inc/customizer.php:1688
+msgid "Animation time between slides"
+msgstr "Čas mezi animacemi snímků"
+
+#: inc/customizer.php:1708
+msgid "Display Controls"
+msgstr "Zobrazit ovládání"
+
+#: inc/customizer.php:1710
+msgid "Display Stop/Play buttons publicly"
+msgstr "Veřejně zobrazí Zastavit/Spustit tlačítko"
+
+#: inc/customizer.php:1730
+msgid "Custom keyboard navigation"
+msgstr "Speaciální navigace pomocí kláves"
+
+#: inc/customizer.php:1732
+msgid "Navigate between sections by left/right arrow"
+msgstr "Navigace mezi sekcemi pomocí levé/pravé šipky"
+
 #: index.php:24 search.php:23
 #, php-format
 msgid "Search Results for: %s"
@@ -928,8 +1000,8 @@ msgid "Clear after previous row/widget"
 msgstr "Zarovnat po předchozím řádku/widgetu"
 
 #: widgets/widgets_part_1.php:71 widgets/widgets_part_1.php:284
-#: widgets/widgets_part_1.php:722 widgets/widgets_part_1.php:953
-#: widgets/widgets_part_1.php:1016 widgets/widgets_part_1.php:1108
+#: widgets/widgets_part_1.php:722 widgets/widgets_part_1.php:957
+#: widgets/widgets_part_1.php:1020 widgets/widgets_part_1.php:1112
 msgid "Scroll Reveal"
 msgid_plural "For Example: enter left and move 300px over 1s after 0.5s"
 msgstr[0] "Scroll Reveal (odhalování prvků při scrollování)"
@@ -956,7 +1028,7 @@ msgstr ""
 "(Volitelné) Použijte, pokud chcete oddělit řádky widgetů a zároveň je "
 "ponechat ve stejné sekci."
 
-#: widgets/widgets_part_1.php:118 widgets/widgets_part_1.php:951
+#: widgets/widgets_part_1.php:118 widgets/widgets_part_1.php:955
 msgid "Height"
 msgstr "Výška"
 
@@ -1022,7 +1094,7 @@ msgid "Text:"
 msgstr "Text:"
 
 #: widgets/widgets_part_1.php:274 widgets/widgets_part_2.php:71
-#: widgets/widgets_part_3.php:36 widgets/widgets_part_4.php:255
+#: widgets/widgets_part_3.php:56 widgets/widgets_part_4.php:255
 #: widgets/widgets_part_5.php:50 widgets/widgets_part_5.php:529
 msgid "Title Color:"
 msgstr "Barva titulku:"
@@ -1032,14 +1104,14 @@ msgid "Text Color:"
 msgstr "Barva textu"
 
 #: widgets/widgets_part_1.php:278 widgets/widgets_part_1.php:714
-#: widgets/widgets_part_1.php:848 widgets/widgets_part_1.php:941
-#: widgets/widgets_part_1.php:1094 widgets/widgets_part_2.php:501
-#: widgets/widgets_part_3.php:154
+#: widgets/widgets_part_1.php:850 widgets/widgets_part_1.php:945
+#: widgets/widgets_part_1.php:1098 widgets/widgets_part_2.php:501
+#: widgets/widgets_part_3.php:178
 msgid "Title Size:"
 msgstr "Velikost Titulku"
 
-#: widgets/widgets_part_1.php:280 widgets/widgets_part_1.php:1096
-#: widgets/widgets_part_3.php:156
+#: widgets/widgets_part_1.php:280 widgets/widgets_part_1.php:1100
+#: widgets/widgets_part_3.php:180
 msgid "Text Size:"
 msgstr "Velikost textu"
 
@@ -1048,9 +1120,9 @@ msgid "Link of This Widget"
 msgstr "Odkaz tohoto widgetu"
 
 #: widgets/widgets_part_1.php:286 widgets/widgets_part_1.php:724
-#: widgets/widgets_part_1.php:955 widgets/widgets_part_1.php:1018
-#: widgets/widgets_part_2.php:519 widgets/widgets_part_3.php:266
-#: widgets/widgets_part_3.php:361 widgets/widgets_part_5.php:541
+#: widgets/widgets_part_1.php:959 widgets/widgets_part_1.php:1022
+#: widgets/widgets_part_2.php:519 widgets/widgets_part_3.php:290
+#: widgets/widgets_part_3.php:385 widgets/widgets_part_5.php:541
 msgid "Width of This Widget"
 msgstr "Šířka widgetu"
 
@@ -1092,7 +1164,7 @@ msgstr "Zobrazit čáry směřující k elementům?"
 msgid "Center Title"
 msgstr "Titulek středového elementu"
 
-#: widgets/widgets_part_1.php:716 widgets/widgets_part_1.php:1104
+#: widgets/widgets_part_1.php:716 widgets/widgets_part_1.php:1108
 #: widgets/widgets_part_2.php:101 widgets/widgets_part_4.php:36
 #: widgets/widgets_part_4.php:143
 msgid "Title Color"
@@ -1158,95 +1230,99 @@ msgstr "Somnium: Call to Action Widget"
 msgid "Display an engaging widget with background, text and button."
 msgstr "Zobrazí podmanivý widget s pozadím, textem a tlačítkem."
 
-#: widgets/widgets_part_1.php:840
+#: widgets/widgets_part_1.php:842
 msgid "Show on Mobile?"
 msgstr "Zobrazit na mobilních zařízeních?"
 
-#: widgets/widgets_part_1.php:842 widgets/widgets_part_4.php:141
+#: widgets/widgets_part_1.php:844 widgets/widgets_part_4.php:141
 msgid "Show on desktop?"
 msgstr "Zobrazit na stolních počítačích?"
 
-#: widgets/widgets_part_1.php:844
+#: widgets/widgets_part_1.php:846
 msgid "In Sidebar?"
 msgstr "Je to v postranním panelu?"
 
-#: widgets/widgets_part_1.php:846 widgets/widgets_part_1.php:937
-#: widgets/widgets_part_1.php:1090 widgets/widgets_part_2.php:69
+#: widgets/widgets_part_1.php:848 widgets/widgets_part_1.php:941
+#: widgets/widgets_part_1.php:1094 widgets/widgets_part_2.php:69
 #: widgets/widgets_part_2.php:95 widgets/widgets_part_2.php:257
 #: widgets/widgets_part_2.php:330 widgets/widgets_part_2.php:497
-#: widgets/widgets_part_3.php:34 widgets/widgets_part_3.php:150
-#: widgets/widgets_part_3.php:353 widgets/widgets_part_5.php:48
+#: widgets/widgets_part_3.php:54 widgets/widgets_part_3.php:174
+#: widgets/widgets_part_3.php:377 widgets/widgets_part_5.php:48
 msgid "Title"
 msgstr "Titulek"
 
-#: widgets/widgets_part_1.php:852 widgets/widgets_part_4.php:46
+#: widgets/widgets_part_1.php:852 widgets/widgets_part_3.php:68
+msgid "Height:"
+msgstr "Výška"
+
+#: widgets/widgets_part_1.php:856 widgets/widgets_part_4.php:46
 #: widgets/widgets_part_4.php:153
 msgid "Button Title"
 msgstr "Titulek tlačítka"
 
-#: widgets/widgets_part_1.php:854
+#: widgets/widgets_part_1.php:858
 msgid "Button Link"
 msgstr "Odkaz tlačítka"
 
-#: widgets/widgets_part_1.php:879
+#: widgets/widgets_part_1.php:883
 msgid "Somnium: Tile Widget"
 msgstr "Somnium: Tile Widget"
 
-#: widgets/widgets_part_1.php:880
+#: widgets/widgets_part_1.php:884
 msgid "Display a tile with background, title and text."
 msgstr "Zobrazí dlaždici s titulkem, pozadím a textem."
 
-#: widgets/widgets_part_1.php:939 widgets/widgets_part_4.php:38
+#: widgets/widgets_part_1.php:943 widgets/widgets_part_4.php:38
 #: widgets/widgets_part_4.php:145
 msgid "Description"
 msgstr "Popis:"
 
-#: widgets/widgets_part_1.php:943 widgets/widgets_part_2.php:503
+#: widgets/widgets_part_1.php:947 widgets/widgets_part_2.php:503
 msgid "Description Size:"
 msgstr "Velikost popisku"
 
-#: widgets/widgets_part_1.php:945
+#: widgets/widgets_part_1.php:949
 msgid "Background"
 msgstr "Pozadí"
 
-#: widgets/widgets_part_1.php:947 widgets/widgets_part_1.php:1098
+#: widgets/widgets_part_1.php:951 widgets/widgets_part_1.php:1102
 #: widgets/widgets_part_2.php:99 widgets/widgets_part_2.php:505
 msgid "Link"
 msgstr "Odkaz"
 
-#: widgets/widgets_part_1.php:949
+#: widgets/widgets_part_1.php:953
 msgid "Color"
 msgstr "Barva"
 
-#: widgets/widgets_part_1.php:981
+#: widgets/widgets_part_1.php:985
 msgid "Somnium: Picture Widget"
 msgstr "Somnium: Picture Widget"
 
-#: widgets/widgets_part_1.php:982
+#: widgets/widgets_part_1.php:986
 msgid "Display a picture with various formatting options."
 msgstr "Zobrazí obrázek s různými možnostmi formátování."
 
-#: widgets/widgets_part_1.php:1010
+#: widgets/widgets_part_1.php:1014
 msgid "Block Height"
 msgstr "Výška bloku"
 
-#: widgets/widgets_part_1.php:1012
+#: widgets/widgets_part_1.php:1016
 msgid "Box Link"
 msgstr "Odkaz boxu"
 
-#: widgets/widgets_part_1.php:1014
+#: widgets/widgets_part_1.php:1018
 msgid "Box Text"
 msgstr "Text boxu"
 
-#: widgets/widgets_part_1.php:1020
+#: widgets/widgets_part_1.php:1024
 msgid "Type of this Widget"
 msgstr "Typ widgetu"
 
-#: widgets/widgets_part_1.php:1047
+#: widgets/widgets_part_1.php:1051
 msgid "Somnium: Reference Widget"
 msgstr "Somnium: Reference Widget"
 
-#: widgets/widgets_part_1.php:1048
+#: widgets/widgets_part_1.php:1052
 msgid ""
 "Widget displaying text, title and image, ideal for use as reference of your "
 "work."
@@ -1254,24 +1330,24 @@ msgstr ""
 "Widget zobrazující text, titulek a obrázek, ideální pro použití jako "
 "reference Vaší práce."
 
-#: widgets/widgets_part_1.php:1092 widgets/widgets_part_2.php:499
-#: widgets/widgets_part_3.php:152
+#: widgets/widgets_part_1.php:1096 widgets/widgets_part_2.php:499
+#: widgets/widgets_part_3.php:176
 msgid "Text"
 msgstr "Text:"
 
-#: widgets/widgets_part_1.php:1100
+#: widgets/widgets_part_1.php:1104
 msgid "Text on Image Hover"
 msgstr "Text po najetí myší"
 
-#: widgets/widgets_part_1.php:1102 widgets/widgets_part_2.php:97
+#: widgets/widgets_part_1.php:1106 widgets/widgets_part_2.php:97
 msgid "Image"
 msgstr "Obrázek"
 
-#: widgets/widgets_part_1.php:1106
+#: widgets/widgets_part_1.php:1110
 msgid "Text Color"
 msgstr "Barva textu"
 
-#: widgets/widgets_part_1.php:1110
+#: widgets/widgets_part_1.php:1114
 msgid "Text on:"
 msgstr "Text na:"
 
@@ -1283,17 +1359,17 @@ msgstr "Somnium: Carousel Widget"
 msgid "Carousel displaying multiple images with optional text."
 msgstr "Karusel zobrazující vícero obrázků s volitelným textem."
 
-#: widgets/widgets_part_2.php:73 widgets/widgets_part_3.php:38
+#: widgets/widgets_part_2.php:73 widgets/widgets_part_3.php:58
 #: widgets/widgets_part_5.php:52
 msgid "ID (Sticky Header Target):"
 msgstr "ID (Cíl záhlaví)"
 
-#: widgets/widgets_part_2.php:75 widgets/widgets_part_3.php:40
+#: widgets/widgets_part_2.php:75 widgets/widgets_part_3.php:60
 #: widgets/widgets_part_5.php:54
 msgid "Subtitle:"
 msgstr "Podtitulek:"
 
-#: widgets/widgets_part_2.php:77 widgets/widgets_part_3.php:42
+#: widgets/widgets_part_2.php:77 widgets/widgets_part_3.php:62
 #: widgets/widgets_part_5.php:56
 msgid "Subtitle Color:"
 msgstr "Barva podtitulku:"
@@ -1486,8 +1562,8 @@ msgid_plural "Input any background"
 msgstr[0] "Pozadí kruhu"
 msgstr[1] "Vložte jakékoliv pozadí "
 
-#: widgets/widgets_part_2.php:517 widgets/widgets_part_3.php:264
-#: widgets/widgets_part_3.php:359 widgets/widgets_part_5.php:539
+#: widgets/widgets_part_2.php:517 widgets/widgets_part_3.php:288
+#: widgets/widgets_part_3.php:383 widgets/widgets_part_5.php:539
 msgid "Scroll Reveal:"
 msgid_plural "For Example: enter left and move 300px over 1s after 0.5s"
 msgstr[0] "Scroll Reveal (odhalování prvků při scrollování)"
@@ -1501,15 +1577,22 @@ msgstr "Somnium: Google Maps Section"
 msgid "Adds section with Google Maps."
 msgstr "Přidává sekci s Google Maps"
 
-#: widgets/widgets_part_3.php:44
+#: widgets/widgets_part_3.php:64
 msgid "Background:"
 msgstr "Pozadí"
 
-#: widgets/widgets_part_3.php:46
+#: widgets/widgets_part_3.php:66
+msgid "Full Height (100vh)"
+msgid_plural "This options adjust height to fit within browser window"
+msgstr[0] "Plná výška (100vh)"
+msgstr[1] ""
+"Toto nastavení upravuje výšku prvku tak, aby se vešel do okna prohlížeče "
+
+#: widgets/widgets_part_3.php:70
 msgid "Maps Settigs"
 msgstr "Nastavení mapy"
 
-#: widgets/widgets_part_3.php:48
+#: widgets/widgets_part_3.php:72
 msgid "Google Maps JavaScript API key"
 msgid_plural ""
 "More info here: https://developers.google.com/maps/documentation/javascript/"
@@ -1519,90 +1602,90 @@ msgstr[1] ""
 "Více informací zde: https://developers.google.com/maps/documentation/"
 "javascript/get-api-key"
 
-#: widgets/widgets_part_3.php:50
+#: widgets/widgets_part_3.php:74
 msgid "Latitude of center:"
 msgstr "Zeměpisná šířka středu"
 
-#: widgets/widgets_part_3.php:52
+#: widgets/widgets_part_3.php:76
 msgid "Longitude of center:"
 msgstr "Zeměpisná délka středu"
 
-#: widgets/widgets_part_3.php:54
+#: widgets/widgets_part_3.php:78
 msgid "Zoom:"
 msgstr "Přiblížení:"
 
-#: widgets/widgets_part_3.php:56
+#: widgets/widgets_part_3.php:80
 msgid "Hue of Map:"
 msgstr "Zabarvení mapy"
 
-#: widgets/widgets_part_3.php:58
+#: widgets/widgets_part_3.php:82
 msgid "Saturation (min -100, max 100):"
 msgstr "Saturace (min -100, max 100):"
 
-#: widgets/widgets_part_3.php:60
+#: widgets/widgets_part_3.php:84
 msgid "Map Type"
 msgstr "Typ mapy"
 
-#: widgets/widgets_part_3.php:87
+#: widgets/widgets_part_3.php:111
 msgid "Somnium: Text-Icon Widget"
 msgstr "Somnium: Text-Icon Widget"
 
-#: widgets/widgets_part_3.php:88
+#: widgets/widgets_part_3.php:112
 msgid "Adds widget with icon and text."
 msgstr "Přidává widget s ikonou a textem"
 
-#: widgets/widgets_part_3.php:158 widgets/widgets_part_5.php:533
+#: widgets/widgets_part_3.php:182 widgets/widgets_part_5.php:533
 msgid "Link:"
 msgstr "Odkaz"
 
-#: widgets/widgets_part_3.php:160 widgets/widgets_part_5.php:417
+#: widgets/widgets_part_3.php:184 widgets/widgets_part_5.php:417
 msgid "Icon Select"
 msgstr "Výběr ikony"
 
-#: widgets/widgets_part_3.php:251 widgets/widgets_part_5.php:511
+#: widgets/widgets_part_3.php:275 widgets/widgets_part_5.php:511
 msgid "Show Settings"
 msgstr "Zobrazit nastavení"
 
-#: widgets/widgets_part_3.php:253 widgets/widgets_part_5.php:513
+#: widgets/widgets_part_3.php:277 widgets/widgets_part_5.php:513
 msgid "Icon:"
 msgstr "Ikona"
 
-#: widgets/widgets_part_3.php:255 widgets/widgets_part_5.php:515
+#: widgets/widgets_part_3.php:279 widgets/widgets_part_5.php:515
 msgid "Color:"
 msgstr "Barva"
 
-#: widgets/widgets_part_3.php:257 widgets/widgets_part_5.php:517
+#: widgets/widgets_part_3.php:281 widgets/widgets_part_5.php:517
 msgid "Select Icon:"
 msgstr "Výběr ikony"
 
-#: widgets/widgets_part_3.php:259 widgets/widgets_part_5.php:519
+#: widgets/widgets_part_3.php:283 widgets/widgets_part_5.php:519
 msgid "Super Title:"
 msgstr "Super titulek "
 
-#: widgets/widgets_part_3.php:261 widgets/widgets_part_5.php:521
+#: widgets/widgets_part_3.php:285 widgets/widgets_part_5.php:521
 msgid "Size:"
 msgstr "Velikost"
 
-#: widgets/widgets_part_3.php:293
+#: widgets/widgets_part_3.php:317
 msgid "Somnium: Query Widget"
 msgstr "Somnium: Query Widget"
 
-#: widgets/widgets_part_3.php:294
+#: widgets/widgets_part_3.php:318
 msgid "Adds widget for displaying recent posts in compact format."
 msgstr ""
 "Přidává widget pro zobrazení posledních příspěvků v kompaktním provedení."
 
-#: widgets/widgets_part_3.php:355
+#: widgets/widgets_part_3.php:379
 msgid "Number of news:"
 msgid_plural "Maximum 8 news"
 msgstr[0] "Počet zpráv:"
 msgstr[1] "Maximum 8 zpráv "
 
-#: widgets/widgets_part_3.php:357 widgets/widgets_part_4.php:259
+#: widgets/widgets_part_3.php:381 widgets/widgets_part_4.php:259
 msgid "Number of Description Excerpt Words:"
 msgstr "Počet slov výňatku"
 
-#: widgets/widgets_part_3.php:363
+#: widgets/widgets_part_3.php:387
 msgid "Category selection"
 msgstr "Vyberte kategorii"
 
