@@ -194,7 +194,7 @@ class co_end extends WP_Widget {
 					}
 				}	
 		}
-		echo'<section class="contact-us" data-parallax="scroll" data-image-src="'.$main[5].'"   id="contact">';
+		echo'<section class="section contact-us" data-parallax="scroll" data-image-src="'.$main[5].'"   id="contact">';
 		?>	
 				<div class="container">
 					<div class="section-header">

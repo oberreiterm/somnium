@@ -249,10 +249,10 @@ class txtfld_wid extends WP_Widget {
 				<div class="mop-text section-txt col-md-12" data-sr="'.$main[5].'">';
 				if(NullEmpty($main[4])){
 					echo'<h2 class="link-title mop-title" style="color:'.$main[2].'; font-size:'.$main[7].$main[8].';">'.$main[0].'</h2>';
-					echo'<p style="color:'.$main[3].'; font-size:'.$main[9].$main[10].';">'.$main[1].'<p>';
+					echo'<div style="color:'.$main[3].'; font-size:'.$main[9].$main[10].';">'.$main[1].'</div>';
 				}else{
 					echo'<a href="'.$main[4].'; font-size:'.$main[7].$main[8].';" ><h2 class="link-title mop-title" style="color:'.$main[2].'">'.$main[0].'</h2></a>';
-					echo'<a href="'.$main[4].'; font-size:'.$main[9].$main[10].';" ><p style="color:'.$main[3].'">'.$main[1].'<p></a>';
+					echo'<a href="'.$main[4].'; font-size:'.$main[9].$main[10].';" ><div style="color:'.$main[3].'">'.$main[1].'</div></a>';
 				}
 					
 				echo'
@@ -290,7 +290,7 @@ class txtfld_wid extends WP_Widget {
 		$instance = array();
 		$number=11;
 		for($i=0;$i<$number;$i++){
-			$instance['in'.$i ] = strip_tags($new_instance['in'.$i]);		
+			$instance['in'.$i ] = wp_kses_post($new_instance['in'.$i]);		
 		}
 		return $instance;
 	}
@@ -818,8 +818,10 @@ class callToAc_wid extends WP_Widget {
 		}
 		echo $args['before_widget'];
 		if(isMobile() == false && 'on' == $instance['in1'] || isMobile() == true && 'on' == $instance['in0']  ){			
-			echo'<section  class="para_con_s" ><div class="para_con" >';
-			echo'<div class="parallax_cta" data-parallax="scroll" data-image-src="'.$main[4].'"  ></div><div class="cta_div" >';
+			echo'<section  class="section para_con_s" ><div class="para_con"'; if(!NullEmpty($main[9]) && !NullEmpty($main[10])){echo' style="height:'.$main[9].$main[10].'" ';}  echo'>';
+			echo'<div class="parallax_cta" data-parallax="scroll"'; 
+			if(!NullEmpty($main[9]) && !NullEmpty($main[10])){echo' style="height:'.$main[9].$main[10].'" ';}
+			echo'data-image-src="'.$main[4].'"  ></div><div class="cta_div" >';
 			if('on' == $instance['in2']){
 				echo'<style>.fixed_image{ position: relative;height: 100%;z-index:0;}</style>';
 				echo'<h1 style="font-size:'.$main[7].$main[8].'" class="cta_tit col-md-12">'.$main[3].'</h1>';
@@ -847,6 +849,8 @@ class callToAc_wid extends WP_Widget {
 		
 		fieldProtoSelectUnits('Title Size:',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7],$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8]);
 		
+		fieldProtoSelectUnits('Height:',$this->get_field_id( 'in9' ),$this->get_field_name( 'in9' ),$main[9],$this->get_field_id( 'in10' ),$this->get_field_name( 'in10' ),$main[10]);
+		
 		fieldProtoImageUpload('Background Image',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
 			
 		fieldProto('Button Title',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5]);
@@ -856,7 +860,7 @@ class callToAc_wid extends WP_Widget {
 		
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$number=9;
+		$number=11;
 		for($i=0;$i<$number;$i++){
 			$instance['in'.$i ] = strip_tags($new_instance['in'.$i]);		
 		}

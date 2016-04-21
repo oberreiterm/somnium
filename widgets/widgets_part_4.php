@@ -107,7 +107,7 @@ class html_vid_wid extends WP_Widget {
 				if( $main[18] == '16:9'):echo'v16by9';endif;
 				if( $main[18] == '2.35:1'):echo'v235';endif;
 				if( $main[18] == '4:3'):echo'v4by3';endif;
-				echo' html5vid yt_video" id="ytplayer"  src="https://www.youtube-nocookie.com/embed/'.$main[14].'?';
+				echo' html5vid yt_video" id="ytplayer"  src="https://www.youtube.com/embed/'.$main[14].'?';
 
 				if ('on' == $instance['in15']){echo'loop=1';}
 				else {echo'loop=0';}

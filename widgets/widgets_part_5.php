@@ -30,7 +30,7 @@ class sc_wid extends WP_Widget {
 				$cont = 'url('.$main[5].')';
 			}	
 		}
-		echo'<section class="section_wid" '; if(!NullEmpty($main[1])){echo 'id="'.$main[1].'"';}  if(!NullEmpty($cont)){echo ' style="background:'.$cont.'"';} 
+		echo'<section class="section_wid section" '; if(!NullEmpty($main[1])){echo 'id="'.$main[1].'"';}  if(!NullEmpty($cont)){echo ' style="background:'.$cont.'"';} 
 		echo'><div class="container">';
 					if( !empty($main[0])){echo'<div class="section-header"><h2 class="white-text" style="color:'.$main[2].'">'.$main[0].'</h2>';
 						if( !empty($main[3])){echo'<h6 class="white-text wt-subtitle" style="color:'.$main[4].'">'.$main[3].'</h6>';}

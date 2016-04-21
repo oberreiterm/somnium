@@ -14,16 +14,36 @@ class gm_wid extends WP_Widget {
 		if (!filter_var($main[5], FILTER_VALIDATE_URL) === false) {
 			$main[5] = 'url('.$main[5].')';
 		}
+		
+		echo'<section class="section section_wid" '; if(!NullEmpty($main[1])){echo 'id="'.$main[1].'"';} echo' style="background:'.$main[5].'">';
 		if(isset($main[9]) && $main[9] !== ''){
 			echo " <script async defer src='https://maps.googleapis.com/maps/api/js?key=".$main[9]."&callback=initMap' type='text/javascript'></script>";
+			if($instance['in15'] == "on"){
+				echo'<script>
+				(function($){
+					function lel(){
+						var h = $(window).outerHeight();
+						var u = 50;
+						var i=0;
+						if($("#wpadminbar").length>0){
+							i= $("#wpadminbar").innerHeight();
+						}
+						var x = h - $(".container_gmaps > .section-header").outerHeight() -u -i;
+						$("#gmaps").css({"height":x}); 
+					}
+					$(window).ready(function(){lel();});
+				})(jQuery);
+				</script>';
+			}
 		}
-		echo'<section class="section_wid" '; if(!NullEmpty($main[1])){echo 'id="'.$main[1].'"';} echo' style="background:'.$main[5].'">
-				<div class="container_gmaps" >
+				echo'<div class="container_gmaps" >
 					<div class="section-header">
 						<h2 class="white-text" style="color:'.$main[2].'">'.$main[0].'</h2>';
 		if( !empty($main[3]) ): echo'<h6 class="white-text" style="color:'.$main[4].'">'.$main[3].'</h6>';endif;echo'</div>';
 		if(NullEmpty($main[12])){$main[12]='Standard';}
-		echo'<div id="gmaps" data-maps="'.$main[6].'/'.$main[7].'/'.$main[8].'" data-maps-hue="'.$main[10].'" data-maps-saturation="'.$main[11].'" data-map-type="'.$main[12].'"></div>';
+		echo'<div id="gmaps" data-maps="'.$main[6].'/'.$main[7].'/'.$main[8].'" data-maps-hue="'.$main[10].'" '; 
+		if(!NullEmpty($main[13]) && !NullEmpty($main[14]) && $instance['in15'] != "on"){echo' style="height:'.$main[13].$main[14].'" ';}
+		echo'data-maps-saturation="'.$main[11].'" data-map-type="'.$main[12].'"></div>';
 		echo '</div></section>';				
 	}
 	public function form( $instance ) {
@@ -42,6 +62,10 @@ class gm_wid extends WP_Widget {
 		fieldProtoColorPicker('Subtitle Color:',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
 			
 		fieldProtoImageUpload('Background:',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5], 'Input any Background');
+		
+		fieldProtoCheckboxDes('Full Height (100vh)',$this->get_field_id( 'in15' ),$this->get_field_name( 'in15' ),$main[15],'This options adjust height to fit within browser window');
+		
+		fieldProtoSelectUnits('Height:',$this->get_field_id( 'in13' ),$this->get_field_name( 'in13' ),$main[13],$this->get_field_id( 'in14' ),$this->get_field_name( 'in14' ),$main[14]);
 		
 		echo'<h2>'; _e('Maps Settigs','somnium');echo'</h2>';
 		
@@ -63,7 +87,7 @@ class gm_wid extends WP_Widget {
 
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$number=13;
+		$number=16;
 		for($i=0;$i<$number;$i++){
 			$instance['in'.$i ] = strip_tags($new_instance['in'.$i]);		
 		}
