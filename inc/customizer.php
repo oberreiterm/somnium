@@ -1524,6 +1524,226 @@ function customizer_register( $wp_customize ) {
 			'priority'    => 5,
 
 	));
+	
+	
+	$wp_customize->add_section( 'pr-mode' , array(
+
+			'title'       => __( 'Presentation Mode', 'somnium' ),
+
+    	  	'priority'    => 5,
+			
+			'panel'  => 'page-pan',
+			
+
+	));
+	
+	$wp_customize->add_setting('pr-enable',array('default'  => 0,'sanitize_callback' => 'wp_filter_nohtml_kses',));
+	
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'pr-enable',
+        array(
+				
+				'label'		=> __( 'Enable Presentation Mode', 'somnium' ),
+				
+				'section'	=> 'pr-mode',
+				
+				'settings'	=> 'pr-enable',
+				
+				'type'      => 'checkbox',
+				
+				'priority'	=> 4,
+				
+				
+			) 
+		) 
+	);
+	$wp_customize->add_setting('pr-autoplay',array('default'  => 0,'sanitize_callback' => 'wp_filter_nohtml_kses',));
+	
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'pr-autoplay',
+        array(
+				
+				'label'		=> __( 'Enable Autoplay', 'somnium' ),
+				
+				'section'	=> 'pr-mode',
+				
+				'settings'	=> 'pr-autoplay',
+				
+				'type'      => 'checkbox',
+				
+				'priority'	=> 4,
+				
+				
+			) 
+		) 
+	);
+	
+	$wp_customize->add_setting( 'pr-ap-time', array('sanitize_callback' => 'sanitize_text_field', 'default' => 5000));
+
+	$wp_customize->add_control(  'pr-ap-time', array(
+
+	      	'label'    => __('Autoplay Time', 'somnium' ), 
+			
+			'description' => __( 'Time in miliseconds', 'somnium' ),
+
+	      	'section'  => 'pr-mode',
+
+	      	'settings' => 'pr-ap-time',
+
+			'priority'    => 5,
+			
+			'type' => 'number',
+			
+
+	));
+	 
+	$wp_customize->add_setting( 'pr-ap-time-delay', array('sanitize_callback' => 'sanitize_text_field', 'default' => 10000));
+
+	$wp_customize->add_control(  'pr-ap-time-delay', array(
+
+	      	'label'    => __('Delay Time', 'somnium' ), 
+			
+			'description' => __( 'Delay after mouse wheel movement before restarting autoplay', 'somnium' ),
+
+	      	'section'  => 'pr-mode',
+
+	      	'settings' => 'pr-ap-time-delay',
+
+			'priority'    => 5,
+			
+			'type' => 'number',
+			
+
+	));
+	
+	$wp_customize->add_setting('pr-scroll',array('default'  => 1,'sanitize_callback' => 'wp_filter_nohtml_kses',));
+	
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'pr-scroll',
+        array(
+				
+				'label'		=> __( 'Scroll by slides', 'somnium' ),
+				
+				'description' => __( 'Enables auto scrolling', 'somnium' ),
+				
+				'section'	=> 'pr-mode',
+				
+				'settings'	=> 'pr-scroll',
+				
+				'type'      => 'checkbox',
+				
+				'priority'	=> 6,
+				
+				
+			) 
+		) 
+	);
+	
+	$wp_customize->add_setting('pr-menu',array('default'  => 1,'sanitize_callback' => 'wp_filter_nohtml_kses',));
+	
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'pr-menu',
+        array(
+				
+				'label'		=> __( 'Display Point Navigation', 'somnium' ),
+				
+				'description' => __( 'Navigation on the right side of screen', 'somnium' ),
+				
+				'section'	=> 'pr-mode',
+				
+				'settings'	=> 'pr-menu',
+				
+				'type'      => 'checkbox',
+				
+				'priority'	=> 6,
+				
+				
+			) 
+		) 
+	);
+	
+	$wp_customize->add_setting('pr-anim-reset',array('default'  => 1,'sanitize_callback' => 'wp_filter_nohtml_kses',));
+	
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'pr-anim-reset',
+        array(
+				
+				'label'		=> __( 'Reset ScrollReveal Animations', 'somnium' ),
+				
+				'description' => __( 'Reset animation for autoplay', 'somnium' ),
+				
+				'section'	=> 'pr-mode',
+				
+				'settings'	=> 'pr-anim-reset',
+				
+				'type'      => 'checkbox',
+				
+				'priority'	=> 5,
+				
+				
+			) 
+		) 
+	);
+	
+	
+	$wp_customize->add_setting( 'pr-slide-time', array('sanitize_callback' => 'sanitize_text_field', 'default' => 500));
+
+	$wp_customize->add_control(  'pr-slide-time', array(
+
+	      	'label'    => __('Animation time between slides', 'somnium' ), 
+			
+			'description' => __( 'Time in miliseconds', 'somnium' ),
+
+	      	'section'  => 'pr-mode',
+
+	      	'settings' => 'pr-slide-time',
+
+			'priority'    => 5,
+			
+			'type' => 'number',
+			
+
+	));
+	
+	$wp_customize->add_setting('pr-controls',array('default'  => 0,'sanitize_callback' => 'wp_filter_nohtml_kses',));
+	
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'pr-controls',
+        array(
+				
+				'label'		=> __( 'Display Controls', 'somnium' ),
+				
+				'description' => __( 'Display Stop/Play buttons publicly', 'somnium' ),
+				
+				'section'	=> 'pr-mode',
+				
+				'settings'	=> 'pr-controls',
+				
+				'type'      => 'checkbox',
+				
+				'priority'	=> 5,
+				
+				
+			) 
+		) 
+	);
+	
+	$wp_customize->add_setting('pr-custom-key',array('default'  => 0,'sanitize_callback' => 'wp_filter_nohtml_kses',));
+	
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'pr-custom-key',
+        array(
+				
+				'label'		=> __( 'Custom keyboard navigation', 'somnium' ),
+				
+				'description' => __( 'Navigate between sections by left/right arrow', 'somnium' ),
+				
+				'section'	=> 'pr-mode',
+				
+				'settings'	=> 'pr-custom-key',
+				
+				'type'      => 'checkbox',
+				
+				'priority'	=> 5,
+				
+				
+			) 
+		) 
+	);
+	
 
 }
 add_action( 'customize_register', 'customizer_register' );
@@ -1763,11 +1983,72 @@ function generate_css()
 add_action( 'wp_head', 'generate_css');
 
 function loadVar(){
+	
 	$header_type=get_theme_mod('header-type');
+	
 	$slider_display=get_theme_mod('slider-display',1);
+	
 	$slider_time=get_theme_mod('slider-time',7000);
+	
 	$header_gradient=get_theme_mod('fixed-header-gradient',0);
+	
 	$scroll_top = get_theme_mod('scroll_top','select-yes');
-	wp_localize_script('main-script', 'customizer', array('slider_time' => $slider_time,'header_type'=> $header_type, 'slider_display' => $slider_display,'header_gradient'=> $header_gradient,'scroll_top' => $scroll_top));
+	
+	$pr_enable = get_theme_mod('pr-enable',0);
+	
+	$pr_autoplay = get_theme_mod('pr-autoplay',0);
+	
+	$pr_ap_time = get_theme_mod('pr-ap-time',5000);
+	
+	$pr_ap_time_delay = get_theme_mod('pr-ap-time-delay',10000);
+	
+	$pr_menu = get_theme_mod('pr-menu',1);
+	
+	$pr_scroll = get_theme_mod('pr-scroll',1);
+	
+	$pr_anim_reset = get_theme_mod('pr-anim-reset',1);
+	
+	$pr_slide_time = get_theme_mod('pr-slide-time',500);
+	
+	$pr_controls = get_theme_mod('pr-controls',0);
+	
+	$pr_custom_key = get_theme_mod('pr-custom-key',0);
+	
+	
+	
+	
+	wp_localize_script('main-script', 'customizer', array(
+	
+		'slider_time' => $slider_time,
+		
+		'header_type'=> $header_type, 
+		
+		'slider_display' => $slider_display,
+		
+		'header_gradient'=> $header_gradient,
+		
+		'scroll_top' => $scroll_top,
+		
+		'pr_enable' => $pr_enable,
+		
+		'pr_autoplay' => $pr_autoplay,
+		
+		'pr_ap_time' => $pr_ap_time,
+		
+		'pr_ap_time_delay' => $pr_ap_time_delay,
+		
+		'pr_menu' => $pr_menu, 
+		
+		'pr_scroll' => $pr_scroll, 
+		
+		'pr_anim_reset' => $pr_anim_reset, 
+		
+		'pr_slide_time' => $pr_slide_time,
+		
+		'pr_controls' => $pr_controls,
+		
+		'pr_custom_key' => $pr_custom_key,
+		
+	));
 }
 add_action('wp_enqueue_scripts', 'loadVar');
