@@ -8,6 +8,10 @@ Changelog
 ##### Author URI: http://oberreiter.8u.cz
 ##### License: GPL3 #####
 
+### 0.7.2.1 (23/4/2016)
+- fixed Carousel Widget, now works for multiple instances
+- added TinyMCE to all textareas, accessible only from widgets.php, TinyMCE is not supported in Customizer
+
 ### 0.7.2 (20/4/2016)
 - fullpage.js integration
 - Presenation mode added 
