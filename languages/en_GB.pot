@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Somnium v0.1\n"
-"POT-Creation-Date: 2016-04-21 14:01+0200\n"
-"PO-Revision-Date: 2016-04-21 14:01+0200\n"
+"POT-Creation-Date: 2016-04-23 00:18+0200\n"
+"PO-Revision-Date: 2016-04-23 00:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -59,29 +59,43 @@ msgstr ""
 "Vypadá to, že se tato stránka na tomto místě již nenachází. Možná zkuste "
 "vyhledávání?"
 
-#: admin-functions.php:268 admin-functions.php:276
+#: admin-functions.php:26 admin-functions.php:42
+msgid "For complex text formating (TinyMCE - WYSIWYG editor) go to page \""
+msgstr ""
+"Pro komplexní formátování textu (TinyMCE - WYSIWYG editor) přejděte na "
+"stránku \""
+
+#: admin-functions.php:26 admin-functions.php:42
+msgid "Widgets"
+msgstr "Widgety"
+
+#: admin-functions.php:26 admin-functions.php:42
+msgid "and edit this widget"
+msgstr "a upravte tento widget"
+
+#: admin-functions.php:288 admin-functions.php:296
 msgid "Upload Image"
 msgstr "Nahrát obrázek"
 
-#: admin-functions.php:286 admin-functions.php:302
+#: admin-functions.php:306 admin-functions.php:322
 msgid "All categories"
 msgstr "Všechny rubriky"
 
-#: admin-functions.php:453
+#: admin-functions.php:473
 msgid "Additional advanced settings for Somnium"
 msgstr "Další upřesňující nastavení pro Somnium"
 
-#: admin-functions.php:488
+#: admin-functions.php:508
 msgid "CSS Recompilation"
 msgstr "CSS rekompilace"
 
-#: admin-functions.php:489
+#: admin-functions.php:509
 msgid ""
 "WARNING: By using this, all modifications made to style.css will be lost."
 msgstr ""
 "VAROVÁNÍ: Použitím budou ztraceny všechny modifikace provedené do style.css"
 
-#: admin-functions.php:490
+#: admin-functions.php:510
 msgid ""
 "This theme uses SASS to create single CSS stylesheet. In order to refresh "
 "all styles, recompile. Use this primarily in cases, when style.css was "
@@ -93,27 +107,27 @@ msgstr ""
 "poškozen nebo kdy chcete zobrazit změny provedené do .scss souborů. "
 "Rekompilací ztratíte všechny změny učiněné do style.css."
 
-#: admin-functions.php:492
+#: admin-functions.php:512
 msgid "Recompile"
 msgid_plural "Confirm recompilation"
 msgstr[0] "Rekompilovat"
 msgstr[1] "Potvrdit rekompilaci"
 
-#: admin-functions.php:498
+#: admin-functions.php:518
 msgid "For more info on compressed version see this website: "
 msgstr "Pro více informací o komprimované verzi navštivte tuto stránku:"
 
-#: admin-functions.php:499
+#: admin-functions.php:519
 msgid "Compressed recompilation"
 msgid_plural "Confrim compressed recompilation"
 msgstr[0] "Komprimovaná rekompilace"
 msgstr[1] "Potvrdit komprimovanou rekompilaci"
 
-#: admin-functions.php:505
+#: admin-functions.php:525
 msgid "JavaScript Minification"
 msgstr "Minifikace JavaScriptu"
 
-#: admin-functions.php:506
+#: admin-functions.php:526
 msgid ""
 "Every .js file in this theme is from default minified. If you have made "
 "changes to non-minified versions, use button below to reminify."
@@ -121,7 +135,7 @@ msgstr ""
 "Každý .js soubor je v této šabloně ve výchozím stavu minifikován. Pokud jste "
 "provedl změny to původních (neminifikovaných) souborů, použijte tlačítko."
 
-#: admin-functions.php:507
+#: admin-functions.php:527
 msgid ""
 "This will minify script.js to script.min.js as it is file with all custom "
 "scripts. Minification of libs.js (libraries, APIs) is not supported because "
@@ -134,30 +148,30 @@ msgstr ""
 "nedoporučovány. Pokud víte, co děláte, použijte, prosím, funkci navázanou na "
 "toto tlačítko jako předlohu k vlastní funkci."
 
-#: admin-functions.php:508
+#: admin-functions.php:528
 msgid "Minify JavaScript"
 msgid_plural "Confirm minification"
 msgstr[0] "Minifikovat JavaScript"
 msgstr[1] "Potvrdit minifikaci"
 
-#: admin-functions.php:514
+#: admin-functions.php:534
 msgid "Restyle your theme"
 msgstr "Přestylizujte svoji šablonu"
 
-#: admin-functions.php:515
+#: admin-functions.php:535
 msgid ""
 "NOTE n.1: In order to see the changes, you have to use \"Recompile\" button "
 "above."
 msgstr "Poznámka č.1: K zobrazení změn, použijte tlačítko \"Rekompilovat\""
 
-#: admin-functions.php:516
+#: admin-functions.php:536
 msgid ""
 "NOTE n.2: Some of these settings may be overridden by settings in Theme "
 "Customizer."
 msgstr ""
 "Poznámka č.2: Některá nastavení mohou být přepsána z nastavení v Customizeru."
 
-#: admin-functions.php:517
+#: admin-functions.php:537
 msgid ""
 "This editor enables you to change some site-wide CSS styling by editing SASS "
 "file. "
@@ -165,15 +179,15 @@ msgstr ""
 "Tento editor umožňuje měnit CSS stylování napříč celým webem pomocí editace "
 "SASS souboru."
 
-#: admin-functions.php:521
+#: admin-functions.php:541
 msgid "Save changes"
 msgstr "Uložit změny"
 
-#: admin-functions.php:551
+#: admin-functions.php:571
 msgid "Revert file to default state"
 msgstr "Navrátit soubor do výchozího stavu"
 
-#: admin-functions.php:552
+#: admin-functions.php:572
 msgid ""
 "Use this in cases when something went wrong or simply when you want to go "
 "back to default values of variables. "
@@ -181,35 +195,35 @@ msgstr ""
 "Používejte toto v případech, kdy se něco pokazilo nebo když se chcete "
 "navrátit k původnímu nastavení."
 
-#: admin-functions.php:553
+#: admin-functions.php:573
 msgid "Reset"
 msgid_plural "Confirm reset"
 msgstr[0] "Resetovat"
 msgstr[1] "Potvrdit resetování"
 
-#: admin-functions.php:705
+#: admin-functions.php:725
 msgid "Post Editor"
 msgstr "Editor příspěvků"
 
-#: admin-functions.php:726 admin-functions.php:959 inc/customizer.php:1308
+#: admin-functions.php:746 admin-functions.php:979 inc/customizer.php:1308
 #: widgets/widgets_part_1.php:854 widgets/widgets_part_1.php:1012
 #: widgets/widgets_part_2.php:267 widgets/widgets_part_4.php:42
 #: widgets/widgets_part_4.php:149
 msgid "Background Image"
 msgstr "Obrázek na pozadí"
 
-#: admin-functions.php:735 admin-functions.php:968
+#: admin-functions.php:755 admin-functions.php:988
 msgid "Background Image Credit Link"
 msgstr "Autorství obrázku na pozadí"
 
-#: admin-functions.php:743 admin-functions.php:977
+#: admin-functions.php:763 admin-functions.php:997
 msgid "Display Author Box"
 msgstr "Zobrazit box s informacemi o autorovi"
 
-#: admin-functions.php:747 admin-functions.php:791 admin-functions.php:804
-#: admin-functions.php:817 admin-functions.php:844 admin-functions.php:857
-#: admin-functions.php:981 admin-functions.php:1011 admin-functions.php:1024
-#: admin-functions.php:1037 admin-functions.php:1064 admin-functions.php:1077
+#: admin-functions.php:767 admin-functions.php:811 admin-functions.php:824
+#: admin-functions.php:837 admin-functions.php:864 admin-functions.php:877
+#: admin-functions.php:1001 admin-functions.php:1031 admin-functions.php:1044
+#: admin-functions.php:1057 admin-functions.php:1084 admin-functions.php:1097
 #: inc/customizer.php:504 inc/customizer.php:699 inc/customizer.php:724
 #: inc/customizer.php:749 inc/customizer.php:774 inc/customizer.php:799
 #: inc/customizer.php:824 inc/customizer.php:892 inc/customizer.php:917
@@ -218,10 +232,10 @@ msgstr "Zobrazit box s informacemi o autorovi"
 msgid "Yes"
 msgstr "Ano"
 
-#: admin-functions.php:747 admin-functions.php:791 admin-functions.php:804
-#: admin-functions.php:817 admin-functions.php:844 admin-functions.php:857
-#: admin-functions.php:981 admin-functions.php:1011 admin-functions.php:1024
-#: admin-functions.php:1037 admin-functions.php:1064 admin-functions.php:1077
+#: admin-functions.php:767 admin-functions.php:811 admin-functions.php:824
+#: admin-functions.php:837 admin-functions.php:864 admin-functions.php:877
+#: admin-functions.php:1001 admin-functions.php:1031 admin-functions.php:1044
+#: admin-functions.php:1057 admin-functions.php:1084 admin-functions.php:1097
 #: inc/customizer.php:506 inc/customizer.php:701 inc/customizer.php:726
 #: inc/customizer.php:751 inc/customizer.php:776 inc/customizer.php:801
 #: inc/customizer.php:826 inc/customizer.php:894 inc/customizer.php:919
@@ -230,159 +244,159 @@ msgstr "Ano"
 msgid "No"
 msgstr "Ne"
 
-#: admin-functions.php:747 admin-functions.php:760 admin-functions.php:774
-#: admin-functions.php:775 admin-functions.php:791 admin-functions.php:804
-#: admin-functions.php:817 admin-functions.php:831 admin-functions.php:844
-#: admin-functions.php:857 admin-functions.php:981 admin-functions.php:994
-#: admin-functions.php:1011 admin-functions.php:1024 admin-functions.php:1037
-#: admin-functions.php:1051 admin-functions.php:1064 admin-functions.php:1077
+#: admin-functions.php:767 admin-functions.php:780 admin-functions.php:794
+#: admin-functions.php:795 admin-functions.php:811 admin-functions.php:824
+#: admin-functions.php:837 admin-functions.php:851 admin-functions.php:864
+#: admin-functions.php:877 admin-functions.php:1001 admin-functions.php:1014
+#: admin-functions.php:1031 admin-functions.php:1044 admin-functions.php:1057
+#: admin-functions.php:1071 admin-functions.php:1084 admin-functions.php:1097
 msgid "Default"
 msgstr "Výchozí"
 
-#: admin-functions.php:756
+#: admin-functions.php:776
 msgid "Choose the the style of content"
 msgstr "Vyberte styl obsahu"
 
-#: admin-functions.php:760 inc/customizer.php:648
+#: admin-functions.php:780 inc/customizer.php:648
 msgid "Modern"
 msgstr "Moderní"
 
-#: admin-functions.php:760
+#: admin-functions.php:780
 msgid "Standard"
 msgstr "Standardní"
 
-#: admin-functions.php:770 admin-functions.php:990
+#: admin-functions.php:790 admin-functions.php:1010
 msgid "Choose the the width of content"
 msgstr "Vyberte šířku obsahu"
 
-#: admin-functions.php:774 admin-functions.php:994
+#: admin-functions.php:794 admin-functions.php:1014
 msgid "Force Full Width"
 msgstr "Vynutit plnou šířku"
 
-#: admin-functions.php:775 admin-functions.php:995
+#: admin-functions.php:795 admin-functions.php:1015
 msgid "Force Left Sidebar"
 msgstr "Vynutit levý postranní panel"
 
-#: admin-functions.php:775 admin-functions.php:995
+#: admin-functions.php:795 admin-functions.php:1015
 msgid "Force Right Sidebar"
 msgstr "Vynutit pravý postranní panel"
 
-#: admin-functions.php:787 admin-functions.php:1007
+#: admin-functions.php:807 admin-functions.php:1027
 msgid "Display date of publication"
 msgstr "Zobrazit datum zveřejnění"
 
-#: admin-functions.php:800 admin-functions.php:1020
+#: admin-functions.php:820 admin-functions.php:1040
 msgid "Display meta info"
 msgstr "Zobrazit meta informace"
 
-#: admin-functions.php:813 admin-functions.php:1033
+#: admin-functions.php:833 admin-functions.php:1053
 msgid "Display posts navigation"
 msgstr "Zobrazit navigaci mezi příspěvky"
 
-#: admin-functions.php:827 admin-functions.php:1047
+#: admin-functions.php:847 admin-functions.php:1067
 msgid "Choose between styles"
 msgstr "Vyberte mezi styly"
 
-#: admin-functions.php:831 admin-functions.php:1051
+#: admin-functions.php:851 admin-functions.php:1071
 msgid "Page-like"
 msgstr "Jako stránka"
 
-#: admin-functions.php:831 admin-functions.php:1051
+#: admin-functions.php:851 admin-functions.php:1071
 msgid "Post-like"
 msgstr "Jako příspěvek"
 
-#: admin-functions.php:840
+#: admin-functions.php:860
 msgid ""
 "Display Contrasting Overlay over Background Image (only for modern style)"
 msgstr ""
 "Zobrazit kontrastní vrstvu přes obrázek na pozadí (pouze pro moderní styl)"
 
-#: admin-functions.php:853 admin-functions.php:1073
+#: admin-functions.php:873 admin-functions.php:1093
 msgid "Display Initial"
 msgstr "Zobrazit iniciálu"
 
-#: admin-functions.php:939
+#: admin-functions.php:959
 msgid "Page Editor"
 msgstr "Editor stránek"
 
-#: admin-functions.php:1060
+#: admin-functions.php:1080
 msgid "Display Contrasting Overlay over Background Image"
 msgstr "Zobrazit kontrastní vrstvu přes obrázek na pozadí"
 
-#: admin-functions.php:1137
+#: admin-functions.php:1157
 msgid "Extra profile information"
 msgstr "Extra profilové informace"
 
-#: admin-functions.php:1138
+#: admin-functions.php:1158
 msgid "WARNING: This will be publicly shown in author box under posts."
 msgstr "Varování: Následující bude veřejně zobrazeno pod příspěvky."
 
-#: admin-functions.php:1146
+#: admin-functions.php:1166
 msgid "Please enter your Facebook profile link"
 msgstr "Zadejte link na Facebookový profil"
 
-#: admin-functions.php:1155
+#: admin-functions.php:1175
 msgid "Please enter your Twitter account link"
 msgstr "Zadejte link na Twitterový účet"
 
-#: admin-functions.php:1164
+#: admin-functions.php:1184
 msgid "Please enter your webpage link"
 msgstr "Zadejte link na Vaši webovou stránku"
 
-#: admin-functions.php:1173
+#: admin-functions.php:1193
 msgid "Please enter your public email"
 msgstr "Zadejte Váš veřejný email"
 
-#: admin-functions.php:1216
+#: admin-functions.php:1236
 #, php-format
 msgid "Page %s"
 msgstr "Stránka %s"
 
-#: admin-functions.php:1243
+#: admin-functions.php:1263
 msgid "About author"
 msgstr "O autorovi"
 
-#: admin-functions.php:1244
+#: admin-functions.php:1264
 msgid "Latest posts"
 msgstr "Poslední příspěvky"
 
-#: admin-functions.php:1253
+#: admin-functions.php:1273
 msgid "About"
 msgstr "O uživateli"
 
-#: admin-functions.php:1255 admin-functions.php:1275
+#: admin-functions.php:1275 admin-functions.php:1295
 msgid "More posts by"
 msgstr "Více příspěvků od"
 
-#: admin-functions.php:1265
+#: admin-functions.php:1285
 msgid "Latest posts by"
 msgstr "Poslední příspěvky od"
 
-#: admin-functions.php:1283
+#: admin-functions.php:1303
 msgid "post"
 msgstr "příspěvek"
 
-#: admin-functions.php:1284
+#: admin-functions.php:1304
 msgid "page"
 msgstr "stránka"
 
-#: admin-functions.php:1285
+#: admin-functions.php:1305
 msgid "Previous"
 msgstr "Předchozí"
 
-#: admin-functions.php:1286
+#: admin-functions.php:1306
 msgid "Next"
 msgstr "Následující"
 
-#: admin-functions.php:1298
+#: admin-functions.php:1318
 msgid "Author"
 msgstr "Autor"
 
-#: admin-functions.php:1300
+#: admin-functions.php:1320
 msgid "Published in"
 msgstr "Publikováno v"
 
-#: admin-functions.php:1307
+#: admin-functions.php:1327
 msgid "Image Credit"
 msgstr "Autorství obrázku"
 
