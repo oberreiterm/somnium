@@ -1,4 +1,4 @@
-# Somnium 'Apollo' (0.7.2)
+# Somnium 'Apollo' (0.7.2.1)
 ##### http://somnium.8u.cz/en/
 ```
 Theme Name: Somnium 
