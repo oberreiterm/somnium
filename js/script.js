@@ -416,10 +416,11 @@
 		* Owl Carousel dynamic margin
 		*/
 		$(window).load(function(){
-			if($('.owl-wrapper-outer').length>0){
-				var xyc = ($('.owl-wrapper-outer').innerHeight() - $('.arrow-owl').innerHeight())/2;
-				$('.arrow-owl').css({marginTop:xyc});
-			}
+	
+			$('.owl-wrapper-outer').each(function(){
+				var xyc = ($(this).innerHeight() - $(this).children('.arrow-owl').innerHeight())/2;
+				$(this).children('.arrow-owl').css({marginTop:xyc});
+			});
 		});
 		/*
 		* Query Widget image calculation
@@ -551,27 +552,31 @@
 	/*
 	* Setup of Owl Carousel
 	*/
-	$(document).ready(function() {
-		var owl = $("#owl-demo");
-		var iNumber = parseInt($(".car_container").attr('data-elements-number'));
-		var iTime = parseInt($(".car_container").attr('data-autoplay-time'));
-		owl.owlCarousel({
-			items : iNumber, //10 items above 1000px browser width
-			itemsDesktop : [1000,4], //5 items between 1000px and 901px
-			itemsDesktopSmall : [900,3], // betweem 900px and 601px
-			itemsTablet: [600,2], //2 items between 600 and 0
-			itemsMobile: [600,2], // itemsMobile disabled - inherit from itemsTablet option
-			autoPlay : iTime,
-			navigation:true,
-			navigationText : ['<div class="arrow-owl owl-nav fa fa-chevron-left"></div>','<div  class="arrow-owl owl-nav fa fa-chevron-right"></div>']
+	$(window).load(function() {
+	
+		$('.carousel_sec').each(function(){
+			var owl = $(this).find("#owl-demo");
+			var iNumber = parseInt($(this).find(".car_container").attr('data-elements-number'));
+			var iTime = parseInt($(this).find(".car_container").attr('data-autoplay-time'));
+			owl.owlCarousel({
+				items : iNumber, //10 items above 1000px browser width
+				itemsDesktop : [1000,4], //5 items between 1000px and 901px
+				itemsDesktopSmall : [900,3], // betweem 900px and 601px
+				itemsTablet: [600,2], //2 items between 600 and 0
+				itemsMobile: [600,2], // itemsMobile disabled - inherit from itemsTablet option
+				autoPlay : iTime,
+				navigation:true,
+				navigationText : ['<div class="arrow-owl owl-nav fa fa-chevron-left"></div>','<div  class="arrow-owl owl-nav fa fa-chevron-right"></div>']
+			});
+		  // Custom Navigation Events
+		  $(this).find(".next").click(function(){
+			owl.trigger('owl.next');
+		  });
+		  $(this).find(".prev").click(function(){
+			owl.trigger('owl.prev');
+		  });
 		});
-	  // Custom Navigation Events
-	  $(".next").click(function(){
-		owl.trigger('owl.next');
-	  })
-	  $(".prev").click(function(){
-		owl.trigger('owl.prev');
-	  })
+		
 	});
 
 	/*
