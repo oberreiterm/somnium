@@ -135,13 +135,19 @@
 		if(customizer.pr_enable==1 && customizer.pr_autoplay==1)
 		{
 			fp_init_auto(); 
-			$(window).resize(function(){fp_init_auto();});
+			$(window).resize(function(){
+				$.fn.fullpage.destroy('all');
+				fp_init_auto();
+			});
 
 		}
 		else if(customizer.pr_enable==1 && !customizer.pr_autoplay==1)
 		{
 			fp_init(); 
-			$(window).resize(function(){fp_init();});
+			$(window).resize(function(){
+				$.fn.fullpage.destroy('all');
+				 fp_init();
+			});
 		}
 		
 		/*
@@ -911,7 +917,7 @@
 				var stX = $(this).scrollTop();
 				var winVH = ($(window).height())/2;
 				var x =stX-lastScrollTopX
-				console.log(stX +" "+lastScrollTopX +" "+ x);
+				//console.log(stX +" "+lastScrollTopX +" "+ x);
 				if ((stX > lastScrollTopX || winVH > stX ) && stX >= 20){
 					$('.somnium-scroll-top').fadeOut(100);
 				}else if(stX >= 20 && (Math.abs(stX-lastScrollTopX)>10)){
