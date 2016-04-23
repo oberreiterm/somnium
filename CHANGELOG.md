@@ -9,6 +9,9 @@ Changelog
 ##### License: GPL3 #####
 
 ### 0.7.2.1 (23/4/2016)
+- TinyMCE removed due to compatibility and reliability issues
+
+### 0.7.2.1 (23/4/2016)
 - fixed Carousel Widget, now works for multiple instances
 
 ### 0.7.2 (20/4/2016)
