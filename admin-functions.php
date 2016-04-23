@@ -19,13 +19,7 @@ function fieldProtoTextArea($name, $this, $that, $var){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>';
-	if(strpos($_SERVER['REQUEST_URI'], 'widgets.php') !== FALSE){
-		$settings = array('tinymce' => true, 'wpautop' => true,'editor_css'=>true,'media_buttons'=>true,'dfw'=>false, 'editor_height'=> 250); 
-		wp_editor( $var, $this ,$settings ); 
-	}else{
-		echo'<h4>'; _e('For complex text formating (TinyMCE - WYSIWYG editor) go to page "','somnium'); echo'<a href="'.'/wp-admin/widgets.php">'; _e('Widgets','somnium'); echo'</a>" '; _e('and edit this widget','somnium'); echo'</h4>'; 
-		echo'<textarea class="textarea_widget" rows="8" colls="50" id="'.$this.'" name="'.$that.'" type="text" value="">'.esc_attr( $var ).'</textarea>';
-	}
+	echo'<textarea class="textarea_widget" rows="8" style="width:100%" id="'.$this.'" name="'.$that.'" type="text" value="">'.esc_attr( $var ).'</textarea>';
 	echo'</p>'; 
 
 }
@@ -35,13 +29,7 @@ function fieldProtoTextAreaDes($name, $this, $that, $var, $des=''){
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
 	<p>'._n( $name, $des, 2, 'somnium' ).'</p>';
-	if(strpos($_SERVER['REQUEST_URI'], 'widgets.php') !== FALSE){
-		$settings = array('tinymce' => true, 'wpautop' => true,'editor_css'=>true,'media_buttons'=>true,'dfw'=>false, 'editor_height'=> 250); 
-		wp_editor( $var, $this ,$settings ); 
-	}else{
-		echo'<h4>'; _e('For complex text formating (TinyMCE - WYSIWYG editor) go to page "','somnium'); echo'<a href="'.'/wp-admin/widgets.php">'; _e('Widgets','somnium'); echo'</a>" '; _e('and edit this widget','somnium'); echo'</h4>'; 
-		echo'<textarea class="textarea_widget" rows="8" colls="50" id="'.$this.'" name="'.$that.'" type="text" value="">'.esc_attr( $var ).'</textarea>';
-	}
+	echo'<textarea class="textarea_widget" rows="8" style="width:100%" id="'.$this.'" name="'.$that.'" type="text" value="">'.esc_attr( $var ).'</textarea>';
 	echo'</p>';
 
 }
