@@ -910,9 +910,11 @@
 			$(window).scroll(function(event){
 				var stX = $(this).scrollTop();
 				var winVH = ($(window).height())/2;
+				var x =stX-lastScrollTopX
+				console.log(stX +" "+lastScrollTopX +" "+ x);
 				if ((stX > lastScrollTopX || winVH > stX ) && stX >= 20){
 					$('.somnium-scroll-top').fadeOut(100);
-				}else if(stX >= 20 && ((stX-lastScrollTopX)<10)){
+				}else if(stX >= 20 && (Math.abs(stX-lastScrollTopX)>10)){
 					$('.somnium-scroll-top').fadeIn(100);
 				}
 				lastScrollTopX = stX;
