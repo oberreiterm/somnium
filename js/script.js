@@ -580,7 +580,7 @@
 	$(window).load(function() {
 	
 		$('.carousel_sec').each(function(){
-			var owl = $(this).find("#owl-demo");
+			var owl = $(this).find(".owl-carousel");
 			var iNumber = parseInt($(this).find(".car_container").attr('data-elements-number'));
 			var iTime = parseInt($(this).find(".car_container").attr('data-autoplay-time'));
 			owl.owlCarousel({
