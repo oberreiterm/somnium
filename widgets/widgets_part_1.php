@@ -50,7 +50,7 @@ class post_box extends WP_Widget {
 			</div>
 			<div class="postw_descr"><i class="postw_icon_sticky  fa fa-thumb-tack"></i>
 				<div class="postw_descr_inner"><span>';
-				echo field_excerpt(get_the_ID() , get_the_content(), $main[2]);
+				echo field_excerpt(get_the_ID() , get_the_excerpt(), $main[2]);
 				echo'</span>
 			</div></div></div></a></div>';
 		}
