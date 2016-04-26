@@ -162,9 +162,9 @@ class fbpage_wid extends WP_Widget {
 			}(document, "script", "facebook-jssdk"));
 			</script>';
 		if('on' == $instance['in3']){
-			echo'<div class="fb-page like-box" float="true" data-href="'.$main[0].'" data-width="'.$main[5].$main[6].'" data-height="'.$main[1].$main[7].'" data-hide-cover="false"'; if('on' == $instance['in4']){echo'data-show-facepile="true"';}else{echo'data-show-facepile="false"';} if('on' == $instance['in2']){echo'data-show-posts="true"';}else{echo'data-show-posts="false"';}echo'</div>';
+			echo'<div class="fb-page like-box" data-float="true" data-href="'.$main[0].'" data-width="'.$main[5].$main[6].'" data-height="'.$main[1].$main[7].'" data-hide-cover="false" '; if('on' == $instance['in4']){echo'data-show-facepile="true"';}else{echo'data-show-facepile="false"';} echo" "; if('on' == $instance['in2']){echo'data-show-posts="true"';}else{echo'data-show-posts="false"';}echo' </div>';
 		}else{
-			echo'<div class="fb-page like-box" float="false" data-href="'.$main[0].'" data-width="'.$main[5].$main[6].'" data-height="'.$main[1].$main[7].'" data-hide-cover="false"'; if('on' == $instance['in4']){echo'data-show-facepile="true"';}else{echo'data-show-facepile="false"';} if('on' == $instance['in2']){echo'data-show-posts="true"';}else{echo'data-show-posts="false"';}echo'</div>';
+			echo'<div class="fb-page like-box" data-float="false" data-href="'.$main[0].'" data-width="'.$main[5].$main[6].'" data-height="'.$main[1].$main[7].'" data-hide-cover="false" '; if('on' == $instance['in4']){echo'data-show-facepile="true"';}else{echo'data-show-facepile="false"';} echo" "; if('on' == $instance['in2']){echo'data-show-posts="true"';}else{echo'data-show-posts="false"';}echo' </div>';
 		}
 		echo'</div></div>';
 	}
@@ -819,7 +819,7 @@ class callToAc_wid extends WP_Widget {
 		echo $args['before_widget'];
 		if(isMobile() == false && 'on' == $instance['in1'] || isMobile() == true && 'on' == $instance['in0']  ){			
 			echo'<section  class="section para_con_s" ><div class="para_con"'; if(!NullEmpty($main[9]) && !NullEmpty($main[10])){echo' style="height:'.$main[9].$main[10].'" ';}  echo'>';
-			echo'<div class="parallax_cta" data-parallax="scroll"'; 
+			echo'<div class="parallax_cta" data-parallax="scroll" '; 
 			if(!NullEmpty($main[9]) && !NullEmpty($main[10])){echo' style="height:'.$main[9].$main[10].'" ';}
 			echo'data-image-src="'.$main[4].'"  ></div><div class="cta_div" >';
 			if('on' == $instance['in2']){
