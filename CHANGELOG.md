@@ -3,10 +3,22 @@ Changelog
 ##### Theme Name: Somnium 
 ##### Theme URI: http://somnium.8u.cz
 ##### Description: Responisive, multilanguage theme
-##### Version: 'Apollo' (0.7.2)
+##### Version: 'Apollo' (0.7.4)
 ##### Author: Michal Oberreiter
 ##### Author URI: http://oberreiter.8u.cz
 ##### License: GPL3 #####
+
+### 0.7.4 (24/05/2017)
+- Fixed CSS in admin's menu
+- Improvements to Somnium Contacts Extended Widget
+
+### 0.7.3 (05/11/2016)
+- Somnium Contacts Extended Widget added
+- CSS improvements
+- Slider Widget's subitile and button is now optional
+
+### 0.7.2.2 (10/08/2016)
+- multiple bugs fixed
 
 ### 0.7.2.1 (23/4/2016)
 - TinyMCE removed due to compatibility and reliability issues

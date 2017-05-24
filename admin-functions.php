@@ -1,11 +1,11 @@
 <?php
 
-function NullEmpty($question){
+function sm_NullEmpty($question){
     return (!isset($question) || trim($question)==='');
 }
 
-function callDefault(&$string, $value){
-	$string = (NullEmpty($string)) ? $value : $string;
+function sm_callDefault(&$string, $value){
+	$string = (sm_NullEmpty($string)) ? $value : $string;
 }
 
 require_once get_template_directory().'/widgets/widgets_part_1.php';
@@ -15,7 +15,7 @@ require_once get_template_directory().'/widgets/widgets_part_4.php';
 require_once get_template_directory().'/widgets/widgets_part_5.php';
 require_once get_template_directory() .'/inc/mobile_detection.php';
 
-function fieldProtoTextArea($name, $this, $that, $var){
+function sm_fieldProtoTextArea($name, $this, $that, $var){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>';
@@ -24,7 +24,7 @@ function fieldProtoTextArea($name, $this, $that, $var){
 
 }
 
-function fieldProtoTextAreaDes($name, $this, $that, $var, $des=''){
+function sm_fieldProtoTextAreaDes($name, $this, $that, $var, $des=''){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -34,7 +34,7 @@ function fieldProtoTextAreaDes($name, $this, $that, $var, $des=''){
 
 }
 
-function fieldProtoScrollRevealDes($name, $this, $that, $var, $des=''){
+function sm_fieldProtoScrollRevealDes($name, $this, $that, $var, $des=''){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -44,7 +44,7 @@ function fieldProtoScrollRevealDes($name, $this, $that, $var, $des=''){
 
 }
 
-function fieldProtoScrollReveal($name, $this, $that, $var){
+function sm_fieldProtoScrollReveal($name, $this, $that, $var){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -53,7 +53,7 @@ function fieldProtoScrollReveal($name, $this, $that, $var){
 
 }
 
-function fieldProtoDes($name, $this, $that, $var, $des=''){
+function sm_fieldProtoDes($name, $this, $that, $var, $des=''){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -63,7 +63,7 @@ function fieldProtoDes($name, $this, $that, $var, $des=''){
 
 }
 
-function fieldProto($name, $this, $that, $var){
+function sm_fieldProto($name, $this, $that, $var){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -72,7 +72,7 @@ function fieldProto($name, $this, $that, $var){
 
 }
 
-function fieldProtoNumber($name, $this, $that, $var, $step=1, $min=0, $max=99999999){
+function sm_fieldProtoNumber($name, $this, $that, $var, $step=1, $min=0, $max=99999999){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -81,7 +81,7 @@ function fieldProtoNumber($name, $this, $that, $var, $step=1, $min=0, $max=99999
 
 }
 
-function fieldProtoNumberDes($name, $this, $that, $var, $des='', $step=1, $min=0, $max=99999999){
+function sm_fieldProtoNumberDes($name, $this, $that, $var, $des='', $step=1, $min=0, $max=99999999){
 
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -91,7 +91,7 @@ function fieldProtoNumberDes($name, $this, $that, $var, $des='', $step=1, $min=0
 
 }
 
-function fieldProtoSelectUnitsDes($name, $this, $that, $var, $this2, $that2, $var2, $des='', $step=1, $min=0){
+function sm_fieldProtoSelectUnitsDes($name, $this, $that, $var, $this2, $that2, $var2, $des='', $step=1, $min=0){
 
 	echo'
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -114,7 +114,7 @@ function fieldProtoSelectUnitsDes($name, $this, $that, $var, $this2, $that2, $va
 	echo'</select>';
 }
 
-function fieldProtoSelectUnits($name, $this, $that, $var, $this2, $that2, $var2, $step=1, $min=0){
+function sm_fieldProtoSelectUnits($name, $this, $that, $var, $this2, $that2, $var2, $step=1, $min=0){
 
 	echo'
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
@@ -144,7 +144,7 @@ function fieldProtoSelectUnits($name, $this, $that, $var, $this2, $that2, $var2,
 
 
 
-function fieldProtoIconSelection($name, $this, $that, $var ,$array){
+function sm_fieldProtoIconSelection($name, $this, $that, $var ,$array){
 	echo'<p>
     <h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
     <select id="'.$this.'" class="icon-select-'.$this.'" name="'.$that.'" type="text">';
@@ -158,7 +158,7 @@ function fieldProtoIconSelection($name, $this, $that, $var ,$array){
 
 
 	
-function fieldProtoSelection($name, $this, $that, $var ,$array){
+function sm_fieldProtoSelection($name, $this, $that, $var ,$array){
 	echo'<p>
     <h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
     <select id="'.$this.'" name="'.$that.'" type="text">';
@@ -172,7 +172,7 @@ function fieldProtoSelection($name, $this, $that, $var ,$array){
 
 
 
-function fieldProtoSelectionDes($name, $this, $that, $var ,$array, $des=''){
+function sm_fieldProtoSelectionDes($name, $this, $that, $var ,$array, $des=''){
 	echo'<p>
     <h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
 	<p>'._n( $name, $des, 2, 'somnium' ).'</p>
@@ -186,16 +186,15 @@ function fieldProtoSelectionDes($name, $this, $that, $var ,$array, $des=''){
 }
 
 
-function fieldProtoCheckbox($name, $this, $that, $var){
+function sm_fieldProtoCheckbox($name, $this, $that, $var){
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
-	<p>'.esc_attr__( $des, 'somnium' ).'</p>
 	<input class="checkbox" type="checkbox"'; checked($var, 'on'); echo' id="'.$this.'" name="'.$that.'" /> 
 	</p>';
 
 }
 
-function fieldProtoCheckboxDes($name, $this, $that, $var, $des=''){
+function sm_fieldProtoCheckboxDes($name, $this, $that, $var, $des=''){
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
 	<p>'._n( $name, $des, 2, 'somnium' ).'</p>
@@ -204,7 +203,7 @@ function fieldProtoCheckboxDes($name, $this, $that, $var, $des=''){
 
 }
 
-function fieldProtoIconPicker($name, $this, $that, $var){
+function sm_fieldProtoIconPicker($name, $this, $that, $var){
 	echo'
 	<script>
 		jQuery(document).ready(function(){
@@ -219,7 +218,7 @@ function fieldProtoIconPicker($name, $this, $that, $var){
 	</p>';
 }
 
-function fieldProtoIconPickerDes($name, $this, $that, $var, $des=''){
+function sm_fieldProtoIconPickerDes($name, $this, $that, $var, $des=''){
 	echo'
 	<script>
 		jQuery(document).ready(function(){
@@ -235,7 +234,7 @@ function fieldProtoIconPickerDes($name, $this, $that, $var, $des=''){
 	</p>';
 }
 
-function fieldProtoColorPicker($name, $this, $that, $var){
+function sm_fieldProtoColorPicker($name, $this, $that, $var){
 	echo'
 	<script>
 		jQuery(document).ready(function(){
@@ -246,12 +245,12 @@ function fieldProtoColorPicker($name, $this, $that, $var){
 	</script>
 	<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
-	<div id="'.$this.'"><input class="cs-wp-color-picker" id="'.$this.'" name="'.$that.'" data-default-color="#fff" type="text" value="'.esc_attr( $var ).'" /></div>
+	<div class="color-picker-container" id="'.$this.'"><input class="cs-wp-color-picker" id="'.$this.'" name="'.$that.'" data-default-color="#fff" type="text" value="'.esc_attr( $var ).'" /></div>
 	</p>';
 
 }
 
-function fieldProtoColorPickerDes($name, $this, $that, $var, $des=''){
+function sm_fieldProtoColorPickerDes($name, $this, $that, $var, $des=''){
 	echo'
 	<script>
 		jQuery(document).ready(function(){
@@ -263,20 +262,20 @@ function fieldProtoColorPickerDes($name, $this, $that, $var, $des=''){
 	<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
 	<p>'._n( $name, $des, 2, 'somnium' ).'</p>
-	<div id="'.$this.'"><input class="cs-wp-color-picker" id="'.$this.'" name="'.$that.'" data-default-color="#fff" type="text" value="'.esc_attr( $var ).'" /></div>
+	<div class="color-picker-container" id="'.$this.'"><input class="cs-wp-color-picker" id="'.$this.'" name="'.$that.'" data-default-color="#fff" type="text" value="'.esc_attr( $var ).'" /></div>
 	</p>';
 
 }
 
 
-function fieldProtoImageUpload($name, $this, $that, $var){
+function sm_fieldProtoImageUpload($name, $this, $that, $var){
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
 	<input class="widefat" id="'.$this.'" name="'.$that.'"  type="text" value="'.esc_attr( $var ).'"/>
 	<input class="upload_image_button button-primary" type="button" value="'.__('Upload Image','somnium').'" />
 	</p>';
 }
-function fieldProtoImageUploadDes($name, $this, $that, $var, $des=''){
+function sm_fieldProtoImageUploadDes($name, $this, $that, $var, $des=''){
 	echo'<p>
 	<h3 for="'.$this.'">'.esc_attr__( $name, 'somnium' ).'</h3>
 	<p>'._n( $name, $des, 2, 'somnium' ).'</p>
@@ -286,7 +285,7 @@ function fieldProtoImageUploadDes($name, $this, $that, $var, $des=''){
 }
 
 
-function fieldProtoCategoryDropdownDes($name, $this, $var, $order, $des=''){
+function sm_fieldProtoCategoryDropdownDes($name, $this, $var, $order, $des=''){
 	echo'<h3>'.__($name,'somnium').'</h3>
 	<p>'._n( $name, $des, 2, 'somnium' ).'</p>';
 		$args = array(
@@ -303,7 +302,7 @@ function fieldProtoCategoryDropdownDes($name, $this, $var, $order, $des=''){
 		echo '<br><br>';
 } 
 
-function fieldProtoCategoryDropdown($name, $this, $var, $order){
+function sm_fieldProtoCategoryDropdown($name, $this, $var, $order){
 	echo'<h3>'.__($name,'somnium').'</h3>';
 		$args = array(
 			'name'             => $this,
@@ -328,8 +327,8 @@ add_action('admin_enqueue_scripts', 'upload_scriptss');
 
 
 
-function hook_pickers(){
-	function upload_scripts(){	
+function sm_hook_pickers(){
+	function sm_upload_scripts(){	
 			wp_enqueue_script('thickbox');
 			wp_enqueue_style('thickbox');
 			wp_enqueue_script('upload_media_widget', get_template_directory_uri(). '/js/upload-media.js', array('jquery', 'media-upload', 'thickbox'));
@@ -340,10 +339,10 @@ function hook_pickers(){
 			wp_enqueue_style( 'font-picker1',   get_template_directory_uri(). '/fonts/GWP-picker/fontselect.css' );
 			wp_enqueue_script( 'font-picker',  get_template_directory_uri(). '/fonts/GWP-picker/jquery.fontselect.min.js', array( 'jquery' ));
 	}
-	add_action('admin_enqueue_scripts', 'upload_scripts');
-	add_action( 'admin_enqueue_scripts',  'enqueue_color_scripts' );
-	add_action( 'admin_footer-widgets.php',  'print_color_scripts' , 9999 );
-	function enqueue_color_scripts( $hook_suffix ) {
+	add_action('admin_enqueue_scripts', 'sm_upload_scripts');
+	add_action( 'admin_enqueue_scripts',  'sm_enqueue_color_scripts' );
+	add_action( 'admin_footer-widgets.php',  'sm_print_color_scripts' , 9999 );
+	function sm_enqueue_color_scripts( $hook_suffix ) {
 			if ( 'widgets.php' !== $hook_suffix ) {
 				return;
 			}
@@ -352,7 +351,7 @@ function hook_pickers(){
 			wp_enqueue_script( 'underscore' );
 	}
 
-	function print_color_scripts() {
+	function sm_print_color_scripts() {
 				 
 					  echo"  <script>
 								( function( $ ){
@@ -404,7 +403,7 @@ if (!class_exists('once')){
     }
 }
 
-function do_the_magic() {
+function sm_do_the_magic() {
 	// Getting directories
 	$src = get_template_directory().'/images/flags/';
 	if (!file_exists(WP_CONTENT_DIR.'/polylang/')) {
@@ -423,12 +422,12 @@ function do_the_magic() {
 	if(is_plugin_active('polylang/polylang.php')){
 		// This will run only once
 		$run_once = new once;
-		if ($run_once->run('do_the_magic')){
-			do_the_magic(); 
+		if ($run_once->run('sm_do_the_magic')){
+			sm_do_the_magic(); 
 		}
 	}
 	
-function filePerm2() {
+function sm_filePerm2() {
 	chmod(get_template_directory().'/sass', 0700);
 	chmod(get_template_directory().'/sass/_variables_FAILSAFE.scss', 0500);
 }
@@ -437,7 +436,7 @@ $run = new once;
 		if ($run->run('filePerm2')){
 			filePerm2(); 
 }
-function sanitize_to_HTML( $input ) {
+function sm_sanitize_to_HTML( $input ) {
 		return wp_kses_post( force_balance_tags( $input ) );
 	}
 	
@@ -463,28 +462,28 @@ function somnium_theme_display() {
 	// Check whether the button has been pressed AND also check the nonce
 	if (isset($_POST['recompile']) && check_admin_referer('recompile_clicked')) {
 		// the button has been pressed AND we've passed the security check
-		recompile_action();
+		sm_recompile_action();
 	}
 	  
 	if (isset($_POST['refreshSASS']) && check_admin_referer('refreshSASS_clicked')) {
-		refreshSASS_action();
+		sm_refreshSASS_action();
 	}
 	
 	if (isset($_POST['minifyJS']) && check_admin_referer('minifyJS_clicked')) {
-		minifyJS_action();
+		sm_minifyJS_action();
 	}
 	
 	if (isset($_POST['recompileCompressed']) && check_admin_referer('recompileCompressed_clicked')) {
-		recompileCompressed_action();
+		sm_recompileCompressed_action();
 	}
 	// If ajax was sent
-	if ($_GET['ajax']) {
+	if (isset($_GET['ajax'])) {
 		// Get properties to variable
 		$write = $_GET['variables'];
 		// Remove slashes before every quote
 		$write = stripslashes($write);
 		// Write to file
-		write_file(get_template_directory() ."/sass/_variables.scss", $write);
+		sm_write_file(get_template_directory() ."/sass/_variables.scss", $write);
 	}
 	// Styling
 	echo'<style>.myForm p.submit{margin-top: 0px;padding-top: 0px;}</style>';
@@ -497,14 +496,14 @@ function somnium_theme_display() {
 		echo'<h4>'; _e('WARNING: By using this, all modifications made to style.css will be lost.', 'somnium'); echo'</h4>';
 		echo'<p>'; _e('This theme uses SASS to create single CSS stylesheet. In order to refresh all styles, recompile. Use this primarily in cases, when style.css was corrupted or when you want to render changes made to .scss files. By recompilation you will loose all changes that you have made to style.css.','somnium'); echo'</p>';
 		// See below for function reference
-		twoStageConfirm('Recompile', 'lelkk', 'Confirm recompilation', 'toHide2');
+		sm_twoStageConfirm('Recompile', 'lelkk', 'Confirm recompilation', 'toHide2');
 	echo '</form>';
 	
 	echo '<form action="themes.php?page=somnium_theme_options" method="post" class="myForm">';
 		wp_nonce_field('recompileCompressed_clicked');
 		echo '<input type="hidden" value="true" name="recompileCompressed" />';
 		echo'<p>'; _e('For more info on compressed version see this website: ','somnium'); echo'<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_16">http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_16</a></p>';
-		twoStageConfirm('Compressed recompilation', 'comp', 'Confrim compressed recompilation', 'comCONF');
+		sm_twoStageConfirm('Compressed recompilation', 'comp', 'Confrim compressed recompilation', 'comCONF');
 	echo'</form>';
 	
 	echo '<form action="themes.php?page=somnium_theme_options" method="post" class="myForm">';
@@ -513,12 +512,12 @@ function somnium_theme_display() {
 		echo'<h1>'; _e('JavaScript Minification','somnium'); echo'</h1>';
 		echo'<h4>'; _e('Every .js file in this theme is from default minified. If you have made changes to non-minified versions, use button below to reminify.', 'somnium'); echo'</h4>';
 		echo'<p>'; _e('This will minify script.js to script.min.js as it is file with all custom scripts. Minification of libs.js (libraries, APIs) is not supported because changing their source code is strongly discouraged. If you know what you are doing, please, use the function tied to button below as a template.','somnium'); echo'</p>';
-		twoStageConfirm('Minify JavaScript', 'mini', 'Confirm minification', 'miniCONF');
+		sm_twoStageConfirm('Minify JavaScript', 'mini', 'Confirm minification', 'miniCONF');
 	echo'</form>';
   
  
 	// Loads file to variable
-	$content =  read_file(get_template_directory() ."/sass/_variables.scss");
+	$content =  sm_read_file(get_template_directory() ."/sass/_variables.scss");
 	echo'<h1>'; _e('Restyle your theme','somnium'); echo'</h1>';
 	echo'<h4>'; _e('NOTE n.1: In order to see the changes, you have to use "Recompile" button above.', 'somnium'); echo'</h4>';
 	echo'<h4>'; _e('NOTE n.2: Some of these settings may be overridden by settings in Theme Customizer.', 'somnium'); echo'</h4>';
@@ -558,7 +557,7 @@ function somnium_theme_display() {
 		echo '<input type="hidden" value="true" name="refreshSASS" />';
 		echo '<br><h1>'.__('Revert file to default state','somnium').'</h1>';
 		echo'<p>'; _e('Use this in cases when something went wrong or simply when you want to go back to default values of variables. ','somnium'); echo'</p><br>';
-		twoStageConfirm('Reset', 'lelk', 'Confirm reset', 'toHide');
+		sm_twoStageConfirm('Reset', 'lelk', 'Confirm reset', 'toHide');
 	echo'</form>';
 	echo '</div>';
 }
@@ -566,7 +565,7 @@ function somnium_theme_display() {
 
 // Two stage conformation button
 // twoStageConfirm('Text to display on the first button', 'ID of the first', 'Text to display on the second button',  'ID of the second'){
-function twoStageConfirm($clickedName, $clicked, $toHideName, $toHide){
+function sm_twoStageConfirm($clickedName, $clicked, $toHideName, $toHide){
 	// Styles
 	echo '<style>#'.$toHide.'{display:none;}</style>';
 	// Buttons with i18n
@@ -582,22 +581,22 @@ function twoStageConfirm($clickedName, $clicked, $toHideName, $toHide){
 }
 
 // Minify JavaScript
-function minifyJS_action(){
+function sm_minifyJS_action(){
 	// Load library
 	include_once(get_template_directory() . '/inc/JSShrink.php' );
 	// Get the file
-	$js2 = read_file(get_template_directory() . '/js/script.js');
+	$js2 = sm_read_file(get_template_directory() . '/js/script.js');
 	// Minify
 	$minifiedCode2 = \JShrink\Minifier::minify($js2);
 	// Output it 
-	write_file( get_template_directory() . '/js/script.min.js', $minifiedCode2);
+	sm_write_file( get_template_directory() . '/js/script.min.js', $minifiedCode2);
 	// Message to admin panel
 	echo '<div id="message" class="updated fade"><p>'.'Minification successful' . '</p></div>';
 }
 
 
 
-function connect_fs($url, $method, $context, $fields = null){
+function sm_connect_fs($url, $method, $context, $fields = null){
 	global $wp_filesystem;
 	if(false === ($credentials = request_filesystem_credentials($url, $method, false, $context, $fields))) {
 		return false;
@@ -610,21 +609,21 @@ function connect_fs($url, $method, $context, $fields = null){
 	return true;
 }
 
-function write_file($file,$text){
+function sm_write_file($file,$text){
 	global $wp_filesystem;
 	$url = wp_nonce_url("themes.php?page=somnium_theme_options", "filesystem-nonce");
 	$form_fields = array("file-data");
-	if(connect_fs($url, "", get_template_directory(), $form_fields)){
+	if(sm_connect_fs($url, "", get_template_directory(), $form_fields)){
 		$wp_filesystem->put_contents($file, $text, FS_CHMOD_FILE);
 		return $text;
 	}else{
 		return new WP_Error("filesystem_error", "Cannot initialize filesystem");
 	}
 }
-function read_file($file){
+function sm_read_file($file){
 	global $wp_filesystem;
 	$url = wp_nonce_url("themes.php?page=somnium_theme_options", "filesystem-nonce");
-	if(connect_fs($url, "", get_template_directory())){
+	if(sm_connect_fs($url, "", get_template_directory())){
 		
 		if($wp_filesystem->exists($file)){
 			$text = $wp_filesystem->get_contents($file);
@@ -644,13 +643,13 @@ function read_file($file){
 
 
 // Reset SASS file
-function refreshSASS_action(){
+function sm_refreshSASS_action(){
 	// Getting files
 	$failSafe = get_template_directory() ."/sass/_variables_FAILSAFE.scss";
 	$toOverwrite = get_template_directory() ."/sass/_variables.scss";
 	// Copying from first to second file (overwriting)
-	$buffer = read_file($failSafe);
-	write_file($toOverwrite,$buffer);
+	$buffer = sm_read_file($failSafe);
+	sm_write_file($toOverwrite,$buffer);
 	//copy ( $failSafe , $toOverwrite);
 	// Fail/Success message
 	if (!copy($failSafe,$toOverwrite)) {
@@ -661,68 +660,68 @@ function refreshSASS_action(){
 }
 
 // Recompile
-function recompile_action(){
+function sm_recompile_action(){
 	// Loads the library
 	require_once get_template_directory() . "/inc/scss.inc.php";
 	$scss = new scssc();
 	// Setting default @import paths
 	$scss->setImportPaths(get_template_directory()."/sass");
 	// Loading the file to the string
-	$scssIn =  read_file(get_template_directory() ."/sass/style.scss"); 
+	$scssIn =  sm_read_file(get_template_directory() ."/sass/style.scss"); 
 	// Compilation
 	$cssOut = $scss->compile($scssIn);
 	// Outputs to style.css
-	write_file(get_template_directory() ."/style.css", $cssOut);
+	sm_write_file(get_template_directory() ."/style.css", $cssOut);
 	// Message to admin panel
 	echo '<div id="message" class="updated fade"><p>'.'Recompilation successful' . '</p></div>';
 }
 
 // Recompile with compression
-function recompileCompressed_action(){
+function sm_recompileCompressed_action(){
 	require_once __DIR__ . "/inc/scss.inc.php";
 	$scss = new scssc();
 	$scss->setImportPaths(get_template_directory()."/sass");
 	// Setting formatter to compression
 	$scss->setFormatter('scss_formatter_compressed');
-	$scssIn =  read_file(get_template_directory() ."/sass/style.scss");
+	$scssIn =  sm_read_file(get_template_directory() ."/sass/style.scss");
 	$cssOut = $scss->compile($scssIn);
-	write_file(get_template_directory() ."/style.css", $cssOut);
+	sm_write_file(get_template_directory() ."/style.css", $cssOut);
 	echo '<div id="message" class="updated fade"><p>'.'Compressed recompilation successful' . '</p></div>';
 	
 }
 
 
 
-	function comment_field_to_bottom( $fields ) {
+	function sm_comment_field_to_bottom( $fields ) {
 		$comment_field = $fields['comment'];
 		unset( $fields['comment'] );
 		$fields['comment'] = $comment_field;
 		return $fields;
 	}
-	add_filter( 'comment_form_fields', 'comment_field_to_bottom' );
+	add_filter( 'comment_form_fields', 'sm_comment_field_to_bottom' );
 
-	function remove_comment_url($arg) {
+	function sm_remove_comment_url($arg) {
 		$arg['url'] = '';
 		return $arg;
 	}
-	add_filter('comment_form_default_fields', 'remove_comment_url');
+	add_filter('comment_form_default_fields', 'sm_remove_comment_url');
 	
-function custom_post_editor() {
+function sm_custom_post_editor() {
     add_meta_box( 
         'my-meta-box',
         __( 'Post Editor' , 'somnium'),
-        'post_editor_render',
+        'sm_post_editor_render',
         'post',
         'normal',
         'high'
     );
 }
-add_action( 'add_meta_boxes', 'custom_post_editor' );
+add_action( 'add_meta_boxes', 'sm_custom_post_editor' );
 
 
 
 
-function post_editor_render($post){
+function sm_post_editor_render($post){
 	wp_nonce_field(basename(__FILE__), 'custom-nonce');
 	$meta_stored_data = get_post_meta($post -> ID);
 	
@@ -891,7 +890,7 @@ function post_editor_render($post){
 	<?php
 }
 	
-function meta_save_data($post_id){
+function sm_meta_save_data($post_id){
 	$is_autosave = wp_is_post_autosave($post_id);
 	$is_revision = wp_is_post_revision($post_id);
 	$is_valid_nonce = (isset($_POST['custom-nonce'])&& wp_verify_nonce($_POST['custom-nonce'], basename(__FILE__))) ? 'true' : 'false';
@@ -937,25 +936,25 @@ function meta_save_data($post_id){
 	} 
 	
 }
-add_action('save_post','meta_save_data');
+add_action('save_post','sm_meta_save_data');
 
 
 
-function custom_page_editor() {
+function sm_custom_page_editor() {
     add_meta_box( 
         'page-editor',
         __( 'Page Editor' , 'somnium'),
-        'page_editor_render',
+        'sm_page_editor_render',
         'page',
         'normal',
         'high'
     );
 }
-add_action( 'add_meta_boxes', 'custom_page_editor' );
+add_action( 'add_meta_boxes', 'sm_custom_page_editor' );
 
 
 
-function page_editor_render($page){
+function sm_page_editor_render($page){
 	wp_nonce_field(basename(__FILE__), 'custom-nonce');
 	$meta_stored_data = get_post_meta($page -> ID);
 	
@@ -1093,7 +1092,7 @@ function page_editor_render($page){
 	<?php
 }
 	
-function meta_page_save_data($page_id){
+function sm_meta_page_save_data($page_id){
 	$is_autosave = wp_is_post_autosave($page_id);
 	$is_revision = wp_is_post_revision($page_id);
 	$is_valid_nonce = (isset($_POST['custom-nonce'])&& wp_verify_nonce($_POST['custom-nonce'], basename(__FILE__))) ? 'true' : 'false';
@@ -1135,12 +1134,12 @@ function meta_page_save_data($page_id){
 		update_post_meta($page_id, 'initial', sanitize_text_field($_POST['initial'])); 
 	}
 }
-add_action('save_post','meta_page_save_data');
+add_action('save_post','sm_meta_page_save_data');
 
-add_action( 'show_user_profile', 'extra_author_info' );
-add_action( 'edit_user_profile', 'extra_author_info' );
+add_action( 'show_user_profile', 'sm_extra_author_info' );
+add_action( 'edit_user_profile', 'sm_extra_author_info' );
 
-function extra_author_info( $user ) {
+function sm_extra_author_info( $user ) {
 
 	echo'<h3>'.__('Extra profile information','somnium').'</h3>
 	<h4>'.__('WARNING: This will be publicly shown in author box under posts.','somnium').'</h4>
@@ -1185,11 +1184,11 @@ function extra_author_info( $user ) {
 	</table>';
 }
 
-add_action( 'personal_options_update', 'extra_author_info_save' );
-add_action( 'edit_user_profile_update', 'extra_author_info_save' );
+add_action( 'personal_options_update', 'sm_extra_author_info_save' );
+add_action( 'edit_user_profile_update', 'sm_extra_author_info_save' );
 
 
-function extra_author_info_save( $user_id ) {
+function sm_extra_author_info_save( $user_id ) {
 
 	if ( !current_user_can( 'edit_user', $user_id ) )
 		return false;
@@ -1207,7 +1206,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 // Code from https://tommcfarlin.com/filter-wp-title/
-function custom_wp_title( $title, $separator ) {
+function sm_custom_wp_title( $title, $separator ) {
 	global $paged, $page;
 	if ( is_feed() ) {
 		return $title;
@@ -1225,11 +1224,11 @@ function custom_wp_title( $title, $separator ) {
 	} // end if
 	return $title;
 } 
-add_filter( 'wp_title', 'custom_wp_title', 10, 2 );
+add_filter( 'wp_title', 'sm_custom_wp_title', 10, 2 );
 
 
 
-function profilepic_social($ID,$DIR){
+				function sm_profilepic_social($ID,$DIR){
 					echo get_avatar($ID,96,'',true); 
 					echo '<ul class="social_author">';
 					$facebook = get_the_author_meta( 'facebook', $ID );
@@ -1242,7 +1241,7 @@ function profilepic_social($ID,$DIR){
 					if($email!== ''){echo'<li><a target="_blank" href="mailto:'.$email.'"><img alt="email-icon"src="'.$DIR.'/images/email-icon.png"></a></li>';}
 					echo'</ul>';
 				}
-				function author_box(){
+				function sm_author_box(){
 					$authorID =get_the_author_meta( 'ID' );
 					$authorName =  get_the_author_meta('display_name');
 					$templDIR = get_template_directory_uri();
@@ -1254,7 +1253,7 @@ function profilepic_social($ID,$DIR){
 					
 					echo'<div id="about_box" class="author_box">
 						<div class="profile_pic">';
-							profilepic_social($authorID,$templDIR);
+							sm_profilepic_social($authorID,$templDIR);
 						// FB, Twatter, WebPage, Email
 						echo'</div>
 						<div class="profile_info">
@@ -1267,7 +1266,7 @@ function profilepic_social($ID,$DIR){
 					
 					echo'<div id="latest_box" class="author_box author_box_posts">
 						<div class="profile_pic">';
-							profilepic_social($authorID,$templDIR);
+							sm_profilepic_social($authorID,$templDIR);
 						echo'</div>
 						<div class="latest_posts">
 							<h2>'.__('Latest posts by', 'somnium').' '.$authorName.'</h2>';
@@ -1287,7 +1286,7 @@ function profilepic_social($ID,$DIR){
 					echo'</div>';
 				}
 				
-				function prev_next_navigation($type){
+				function sm_prev_next_navigation($type){
 					if($type=='post'){$tpToStr=__('post','somnium');}
 					else if($type=='page'){$tpToStr=__('page','somnium');}
 					$prev = __('Previous','somnium').' '.$tpToStr;
@@ -1300,11 +1299,15 @@ function profilepic_social($ID,$DIR){
 					echo'</div></div>';
 				}
 				
-				function post_meta($show_cat=true){
-					$category = get_the_category();$firstCategory = $category[0]->cat_name; 
-					$cat = get_category_link(get_cat_ID($firstCategory)); $authorLNK = get_the_author_meta('display_name');
+				function sm_post_meta($show_cat=true){
+					$category = get_the_category();
+					if(isset($category) && $category != null){
+						$firstCategory = $category[0]->cat_name; 
+						$cat = get_category_link(get_cat_ID($firstCategory));
+					}			
+					 $authorLNK = get_the_author_meta('display_name');
 					echo'<span>'.__('Author','somnium').' <a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'">'.$authorLNK.'</a> ';
-					if($show_cat==true && !is_attachment()){
+					if($show_cat==true && !is_attachment() && isset($category) && $category != null){
 						echo'  | '.__('Published in','somnium').' ';
 						echo '<a href="'.get_category_link(get_cat_ID($category[0]->cat_name)).'">'.$category[0]->cat_name.'</a>';
 						for($i=1;isset($category[$i]);$i++){
@@ -1312,12 +1315,12 @@ function profilepic_social($ID,$DIR){
 						}
 					}
 					$imgCred = get_post_meta(get_the_ID(), 'img_credit', true);
-					if(!NullEmpty($imgCred) && is_single()){echo'<a href="'.$imgCred .'"><img alt="image-credit" class="image-credit" title="'.__('Image Credit','somnium').'" src="'.get_template_directory_uri().'/images/icon-camera.png"></a>'; }
+					if(!sm_NullEmpty($imgCred) && is_single()){echo'<a href="'.$imgCred .'"><img alt="image-credit" class="image-credit" title="'.__('Image Credit','somnium').'" src="'.get_template_directory_uri().'/images/icon-camera.png"></a>'; }
 					echo'</span>';
 				}
 				
 				
-				function post_meta_short(){
+				function sm_post_meta_short(){
 					$category = get_the_category();
 					echo'<div class="postXtooltips"  data-toggle="tooltip" title="'; the_author(); echo'"><i class="postXicon fa fa-user"></i></div><span> | </span>
 						<div class="postXtooltips"  data-toggle="tooltip" title="';
@@ -1329,7 +1332,7 @@ function profilepic_social($ID,$DIR){
 						<div class="postXtooltips"  data-toggle="tooltip" title="'; comments_number(); echo'"><i class="postXicon fa fa-comments-o"></i></div>';
 				}
 				
-				function post_meta_long(){
+				function sm_post_meta_long(){
 					$category = get_the_category();
 					echo'<div><i class="postXicon fa fa-user"></i> '.get_the_author().' | 
 						<i class="postXicon fa fa-folder-open"></i> ';
@@ -1372,16 +1375,20 @@ function profilepic_social($ID,$DIR){
 				add_shortcode( 'drive', 'dst' );
 	*/			
 				
-function getImage($tst,$width, $height){
-	if(strpos(pathinfo($tst, PATHINFO_DIRNAME), home_url()) !== false){
+	
+	function sm_getImage($tst,$width, $height){
+		if($tst!==null){
+			if(strpos(pathinfo($tst, PATHINFO_DIRNAME), home_url()) !== false){
 			$filename = pathinfo($tst, PATHINFO_DIRNAME).'/'. pathinfo($tst, PATHINFO_FILENAME).'-'.$width.'x'.$height.'.'.pathinfo($tst, PATHINFO_EXTENSION);
-			if (@getimagesize($filename)){
-				echo $filename;
+				if (@getimagesize($filename)){
+					return $filename;
+				}else{
+					return $tst;
+				} 
 			}else{
-				echo $tst;
-			} 
-		}else{
-			echo $tst; 
-		}	
-}
+				return $tst; 
+			}	
+		}
+		return $tst; 		
+	}
 				

@@ -902,8 +902,8 @@ window.scrollReveal = (function( window ){
 
 
 /*!
- * parallax.js v1.3.1 (http://pixelcog.github.io/parallax.js/)
- * @copyright 2015 PixelCog, Inc.
+ * parallax.js v1.4.2 (http://pixelcog.github.io/parallax.js/)
+ * @copyright 2016 PixelCog, Inc.
  * @license MIT (https://github.com/pixelcog/parallax.js/blob/master/LICENSE)
  */
 
@@ -918,7 +918,7 @@ window.scrollReveal = (function( window ){
     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
       window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
       window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                                 || window[vendors[x]+'CancelRequestAnimationFrame'];
+        || window[vendors[x]+'CancelRequestAnimationFrame'];
     }
 
     if (!window.requestAnimationFrame)
@@ -995,7 +995,7 @@ window.scrollReveal = (function( window ){
       this.positionY + (isNaN(this.positionY)? '' : 'px');
 
     if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-      if (this.iosFix && !this.$element.is('img')) {
+      if (this.imageSrc && this.iosFix && !this.$element.is('img')) {
         this.$element.css({
           backgroundImage: 'url(' + this.imageSrc + ')',
           backgroundSize: 'cover',
@@ -1006,7 +1006,7 @@ window.scrollReveal = (function( window ){
     }
 
     if (navigator.userAgent.match(/(Android)/)) {
-      if (this.androidFix && !this.$element.is('img')) {
+      if (this.imageSrc && this.androidFix && !this.$element.is('img')) {
         this.$element.css({
           backgroundImage: 'url(' + this.imageSrc + ')',
           backgroundSize: 'cover',
@@ -1017,7 +1017,16 @@ window.scrollReveal = (function( window ){
     }
 
     this.$mirror = $('<div />').prependTo('body');
-    this.$slider = $('<img />').prependTo(this.$mirror);
+
+    var slider = this.$element.find('>.parallax-slider');
+    var sliderExisted = false;
+
+    if (slider.length == 0)
+      this.$slider = $('<img />').prependTo(this.$mirror);
+    else {
+      this.$slider = slider.prependTo(this.$mirror)
+      sliderExisted = true;
+    }
 
     this.$mirror.addClass('parallax-mirror').css({
       visibility: 'hidden',
@@ -1041,9 +1050,10 @@ window.scrollReveal = (function( window ){
       Parallax.requestRender();
     });
 
-    this.$slider[0].src = this.imageSrc;
+    if (!sliderExisted)
+      this.$slider[0].src = this.imageSrc;
 
-    if (this.naturalHeight && this.naturalWidth || this.$slider[0].complete) {
+    if (this.naturalHeight && this.naturalWidth || this.$slider[0].complete || slider.length > 0) {
       this.$slider.trigger('load');
     }
 
@@ -1055,7 +1065,7 @@ window.scrollReveal = (function( window ){
   $.extend(Parallax.prototype, {
     speed:    0.2,
     bleed:    0,
-    zIndex:   1,
+    zIndex:   -100,
     iosFix:   true,
     androidFix: true,
     position: 'center',
@@ -1116,14 +1126,14 @@ window.scrollReveal = (function( window ){
       var overScroll   = this.overScrollFix ? Parallax.overScroll : 0;
       var scrollBottom = scrollTop + Parallax.winHeight;
 
-      if (this.boxOffsetBottom > scrollTop && this.boxOffsetTop < scrollBottom) {
+      if (this.boxOffsetBottom > scrollTop && this.boxOffsetTop <= scrollBottom) {
         this.visibility = 'visible';
+        this.mirrorTop = this.boxOffsetTop  - scrollTop;
+        this.mirrorLeft = this.boxOffsetLeft - scrollLeft;
+        this.offsetTop = this.offsetBaseTop - this.mirrorTop * (1 - this.speed);
       } else {
         this.visibility = 'hidden';
       }
-      this.mirrorTop = this.boxOffsetTop  - scrollTop;
-      this.mirrorLeft = this.boxOffsetLeft - scrollLeft;
-      this.offsetTop = this.offsetBaseTop - this.mirrorTop * (1 - this.speed);
 
       this.$mirror.css({
         transform: 'translate3d(0px, 0px, 0px)',
@@ -1166,22 +1176,34 @@ window.scrollReveal = (function( window ){
 
       var $doc = $(document), $win = $(window);
 
+      var loadDimensions = function() {
+        Parallax.winHeight = $win.height();
+        Parallax.winWidth  = $win.width();
+        Parallax.docHeight = $doc.height();
+        Parallax.docWidth  = $doc.width();
+      };
+
+      var loadScrollPosition = function() {
+        var winScrollTop  = $win.scrollTop();
+        var scrollTopMax  = Parallax.docHeight - Parallax.winHeight;
+        var scrollLeftMax = Parallax.docWidth  - Parallax.winWidth;
+        Parallax.scrollTop  = Math.max(0, Math.min(scrollTopMax,  winScrollTop));
+        Parallax.scrollLeft = Math.max(0, Math.min(scrollLeftMax, $win.scrollLeft()));
+        Parallax.overScroll = Math.max(winScrollTop - scrollTopMax, Math.min(winScrollTop, 0));
+      };
+
       $win.on('resize.px.parallax load.px.parallax', function() {
-          Parallax.winHeight = $win.height();
-          Parallax.winWidth  = $win.width();
-          Parallax.docHeight = $doc.height();
-          Parallax.docWidth  = $doc.width();
+          loadDimensions();
           Parallax.isFresh = false;
           Parallax.requestRender();
         })
         .on('scroll.px.parallax load.px.parallax', function() {
-          var scrollTopMax  = Parallax.docHeight - Parallax.winHeight;
-          var scrollLeftMax = Parallax.docWidth  - Parallax.winWidth;
-          Parallax.scrollTop  = Math.max(0, Math.min(scrollTopMax,  $win.scrollTop()));
-          Parallax.scrollLeft = Math.max(0, Math.min(scrollLeftMax, $win.scrollLeft()));
-          Parallax.overScroll = Math.max($win.scrollTop() - scrollTopMax, Math.min($win.scrollTop(), 0));
+          loadScrollPosition();
           Parallax.requestRender();
         });
+
+      loadDimensions();
+      loadScrollPosition();
 
       this.isReady = true;
     },
@@ -1214,6 +1236,22 @@ window.scrollReveal = (function( window ){
           self.isBusy = false;
         });
       }
+    },
+    destroy: function(el){
+      var i,
+          parallaxElement = $(el).data('px.parallax');
+      parallaxElement.$mirror.remove();
+      for(i=0; i < this.sliders.length; i+=1){
+        if(this.sliders[i] == parallaxElement){
+          this.sliders.splice(i, 1);
+        }
+      }
+      $(el).data('px.parallax', false);
+      if(this.sliders.length === 0){
+        $(window).off('scroll.px.parallax resize.px.parallax load.px.parallax');
+        this.isReady = false;
+        Parallax.isSetup = false;
+      }
     }
   });
 
@@ -1232,8 +1270,16 @@ window.scrollReveal = (function( window ){
         options = $.extend({}, $this.data(), options);
         $this.data('px.parallax', new Parallax(this, options));
       }
+      else if (typeof option == 'object')
+      {
+        $.extend($this.data('px.parallax'), options);
+      }
       if (typeof option == 'string') {
-        Parallax[option]();
+        if(option == 'destroy'){
+            Parallax['destroy'](this);
+        }else{
+          Parallax[option]();
+        }
       }
     })
   };
@@ -1259,6 +1305,7 @@ window.scrollReveal = (function( window ){
   });
 
 }(jQuery, window, document));
+
 
 "function"!==typeof Object.create&&(Object.create=function(f){function g(){}g.prototype=f;return new g});
 (function(f,g,k){var l={init:function(a,b){this.$elem=f(b);this.options=f.extend({},f.fn.owlCarousel.options,this.$elem.data(),a);this.userOptions=a;this.loadContent()},loadContent:function(){function a(a){var d,e="";if("function"===typeof b.options.jsonSuccess)b.options.jsonSuccess.apply(this,[a]);else{for(d in a.owl)a.owl.hasOwnProperty(d)&&(e+=a.owl[d].item);b.$elem.html(e)}b.logIn()}var b=this,e;"function"===typeof b.options.beforeInit&&b.options.beforeInit.apply(this,[b.$elem]);"string"===typeof b.options.jsonPath?

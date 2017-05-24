@@ -113,8 +113,8 @@ class WidgetImageField {
 
             $field .= "</div>";
 
-            $field .= "<a class='button iti-image-widget-trigger' href='media-upload.php?type=image&TB_iframe=true' title='" . __( 'Choose Image' ) . "'>";
-            $field .= __( 'Choose Image' );
+            $field .= "<a class='button iti-image-widget-trigger' href='media-upload.php?type=image&TB_iframe=true' title='" . __( 'Choose Image','somnium' ) . "'>";
+            $field .= __( 'Choose Image' ,'somnium');
             $field .= "</a></div>";
         }
         return $field;

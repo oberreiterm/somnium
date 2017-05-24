@@ -1,19 +1,19 @@
 <?php 
 
-function recompile_action_local(){
+function sm_recompile_action_local(){
 					// Loads the library
 					require_once get_template_directory() . "/inc/scss.inc.php";
 					$scss = new scssc();
 					// Setting default @import paths
 					$scss->setImportPaths(get_template_directory()."/sass");
 					// Loading the file to the string
-					$scssIn =  read_file(get_template_directory() ."/sass/style.scss");
+					$scssIn =  sm_read_file(get_template_directory() ."/sass/style.scss");
 					// Compilation
 					$cssOut = $scss->compile($scssIn);
 					// Outputs to style.css
-					write_file(get_template_directory() ."/style.css", $cssOut);
+					sm_write_file(get_template_directory() ."/style.css", $cssOut);
 				}
-function get_str_between($str, $start, $end){
+function sm_get_str_between($str, $start, $end){
 					// Prevents from being empty
 					$str = ' '.$str;
 					// Position of start
@@ -30,7 +30,7 @@ function get_str_between($str, $start, $end){
 					return substr($str, $inPos, $length);
 		}
 				
-function customizer_register( $wp_customize ) {
+function sm_customizer_register( $wp_customize ) {
 	$counter=0;
 
 	if( class_exists( 'WP_Customize_Control' ) ){ 
@@ -40,14 +40,14 @@ function customizer_register( $wp_customize ) {
 			public $original = 'Montserrat-Light';
 			
 			public function render_content() {
-				if ($_GET['ajax']) {
-					if($_GET['apply-'.$this->id] == true && $counter<1){
+				if (isset($_GET['ajax'])) {
+					if(isset($_GET['apply-'.$this->id]) == true && $counter<1){
 						// Loads the file
-						$content =  read_file(get_template_directory() ."/sass/_variables.scss");
+						$content =  sm_read_file(get_template_directory() ."/sass/_variables.scss");
 						// Gets the custom key
 						$objectToParse = $this->keys.':';
 						// Gets string from $content after $objectToParse and before ';'
-						$parsed = get_str_between($content, $objectToParse, ';');
+						$parsed = sm_get_str_between($content, $objectToParse, ';');
 						// Retrieves original key and value
 						$parsed = $objectToParse.$parsed;
 						// Removes '+' from font name, f.e. Courier+New+700 -> Courier New 700
@@ -59,9 +59,9 @@ function customizer_register( $wp_customize ) {
 						// Replaces old with new
 						$content = str_replace($parsed,$fontName,$content);
 						// Puts it back to file
-						write_file(get_template_directory() ."/sass/_variables.scss", $content);
+						sm_write_file(get_template_directory() ."/sass/_variables.scss", $content);
 						// Creates new style.css with new values
-						recompile_action_local();
+						sm_recompile_action_local();
 						$counter++;
 					}
 				}
@@ -117,15 +117,15 @@ function customizer_register( $wp_customize ) {
 			public function render_content() {
 				
 				
-					if ($_GET['ajax']) {
-						if($_GET['variables_type'] == true){
-						$content =  read_file(get_template_directory() ."/sass/_variables.scss");
+					if (isset($_GET['ajax'])) {
+						if(isset($_GET['variables_type'])){
+						$content =  sm_read_file(get_template_directory() ."/sass/_variables.scss");
 						$object= array('$heading-font-light','$heading-font','$primary-bodyfont','$secondary-bodyfont');
 						$objectValue = array('Montserrat-Hairline','Montserrat-UltraLight','Montserrat-Light','Montserrat Thin');
 						
 						for($i=0;$i<4;$i++){
 							$objectToParse = $object[$i].':';
-							$parsed = get_str_between($content, $objectToParse, ';');
+							$parsed = sm_get_str_between($content, $objectToParse, ';');
 							$parsed = $objectToParse.$parsed;
 							$fontName = ' "'.str_replace("+"," ",$objectValue[$i]).'"';
 							$fontName = $objectToParse.$fontName;
@@ -136,8 +136,8 @@ function customizer_register( $wp_customize ) {
 						//echo 'new '.$fontName;
 						
 		
-						write_file(get_template_directory() ."/sass/_variables.scss", $content);
-						recompile_action_local();
+						sm_write_file(get_template_directory() ."/sass/_variables.scss", $content);
+						sm_recompile_action_local();
 					}
 				}
 		
@@ -1388,7 +1388,7 @@ function customizer_register( $wp_customize ) {
 
 	
 	
-	$wp_customize->add_setting( 'footer_copyright', array('sanitize_callback' => 'sanitize_to_HTML'));
+	$wp_customize->add_setting( 'footer_copyright', array('sanitize_callback' => 'sanitize_text_field'));
 
 	$wp_customize->add_control( 'footer_copyright', array(
 
@@ -1746,7 +1746,7 @@ function customizer_register( $wp_customize ) {
 	
 
 }
-add_action( 'customize_register', 'customizer_register' );
+add_action( 'customize_register', 'sm_customizer_register' );
 
 
 function somnium_advanced_css(){
@@ -1944,10 +1944,10 @@ function include_fotns(){
 		$header_font2=get_theme_mod('font2');
 		$header_font3=get_theme_mod('font3');
 		$header_font4=get_theme_mod('font4');
-		echo (!NullEmpty($header_font)&& $header_font != "none" ?"<link href='https://fonts.googleapis.com/css?family=".$header_font."&subset=latin-ext,latin' rel='stylesheet' type='text/css'>" : "");
-		echo (!NullEmpty($header_font2)&& $header_font2 != "none" ?"<link href='https://fonts.googleapis.com/css?family=".$header_font2."&subset=latin-ext,latin' rel='stylesheet' type='text/css'>" : "");
-		echo (!NullEmpty($header_font3)&& $header_font3 != "none" ?"<link href='https://fonts.googleapis.com/css?family=".$header_font3."&subset=latin-ext,latin' rel='stylesheet' type='text/css'>" : "");
-		echo (!NullEmpty($header_font4)&& $header_font4 != "none" ?"<link href='https://fonts.googleapis.com/css?family=".$header_font4."&subset=latin-ext,latin' rel='stylesheet' type='text/css'>" : "");
+		echo (!sm_NullEmpty($header_font)&& $header_font != "none" ?"<link href='https://fonts.googleapis.com/css?family=".$header_font."&subset=latin-ext,latin' rel='stylesheet' type='text/css'>" : "");
+		echo (!sm_NullEmpty($header_font2)&& $header_font2 != "none" ?"<link href='https://fonts.googleapis.com/css?family=".$header_font2."&subset=latin-ext,latin' rel='stylesheet' type='text/css'>" : "");
+		echo (!sm_NullEmpty($header_font3)&& $header_font3 != "none" ?"<link href='https://fonts.googleapis.com/css?family=".$header_font3."&subset=latin-ext,latin' rel='stylesheet' type='text/css'>" : "");
+		echo (!sm_NullEmpty($header_font4)&& $header_font4 != "none" ?"<link href='https://fonts.googleapis.com/css?family=".$header_font4."&subset=latin-ext,latin' rel='stylesheet' type='text/css'>" : "");
 	}
 add_action( 'wp_head', 'include_fotns');
 

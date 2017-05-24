@@ -4,11 +4,11 @@
 
 
 		<div class="bc-container-post" data-parallax="scroll" data-image-src="<?php 
-		$tst = get_theme_mod('category-bc',get_template_directory_uri ().'/images/somnium_1920.jpg');
-		getImage($tst,1920,300);
+		$tstE = get_theme_mod('category-bc',get_template_directory_uri ().'/images/somnium_1920.jpg');
+		echo $tstE;
 		echo '"';
 		if(isset($tst)){ 
-			echo' style="'.call_gradient_placeholder();
+			echo' style="'.sm_call_gradient_placeholder();
 		}
 		?>" >
 		<div class="top-outer-container-title container">

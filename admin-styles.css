@@ -1,3 +1,5 @@
+
+
 .meta-td input{
 	width: 450px;
 }
@@ -34,7 +36,7 @@
 }
 .units-select{
 	min-width: 0px !important;
-    width: 52px;
+    width: 52px !important;
 }
 
 .font-select{

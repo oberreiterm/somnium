@@ -30,7 +30,7 @@ class sc_wid extends WP_Widget {
 				$cont = 'url('.$main[5].')';
 			}	
 		}
-		echo'<section class="section_wid section" '; if(!NullEmpty($main[1])){echo 'id="'.$main[1].'"';}  if(!NullEmpty($cont)){echo ' style="background:'.$cont.'"';} 
+		echo'<section class="section_wid section" '; if(!sm_NullEmpty($main[1])){echo 'id="'.$main[1].'"';}  if(!sm_NullEmpty($cont)){echo ' style="background:'.$cont.'"';} 
 		echo'><div class="container">';
 					if( !empty($main[0])){echo'<div class="section-header"><h2 class="white-text" style="color:'.$main[2].'">'.$main[0].'</h2>';
 						if( !empty($main[3])){echo'<h6 class="white-text wt-subtitle" style="color:'.$main[4].'">'.$main[3].'</h6>';}
@@ -44,20 +44,22 @@ class sc_wid extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','');
+		}
+		sm_fieldProto('Title',$this->get_field_id( 'in0' ),$this->get_field_name( 'in0' ),$main[0]);
 		
-		fieldProto('Title',$this->get_field_id( 'in0' ),$this->get_field_name( 'in0' ),$main[0]);
+		sm_fieldProtoColorPicker('Title Color:',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
 		
-		fieldProtoColorPicker('Title Color:',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
-		
-		fieldProto('ID (Sticky Header Target):',$this->get_field_id( 'in1' ),$this->get_field_name( 'in1' ),$main[1]);
+		sm_fieldProto('ID (Sticky Header Target):',$this->get_field_id( 'in1' ),$this->get_field_name( 'in1' ),$main[1]);
 			
-		fieldProto('Subtitle:',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
+		sm_fieldProto('Subtitle:',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
 			
-		fieldProtoColorPicker('Subtitle Color:',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
+		sm_fieldProtoColorPicker('Subtitle Color:',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
 			
-		fieldProtoImageUploadDes('Background Image:',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5],'To use color, empty this field.');
+		sm_fieldProtoImageUploadDes('Background Image:',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5],'To use color, empty this field.');
 		
-		fieldProtoColorPicker('Background Color:',$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6]);
+		sm_fieldProtoColorPicker('Background Color:',$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6]);
 	}
 		
 	public function update( $new_instance, $old_instance ) {
@@ -165,6 +167,9 @@ class postX extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
+		if(!isset($main)){
+			$main = array('','','',2,0,'','','');
+		}
 
 		echo $args['before_widget'];
 	
@@ -172,7 +177,7 @@ class postX extends WP_Widget {
 			'post_type' => 'post',
 			'cat' => $main[7],
 			'offset' => $main[4],
-			'posts_per_page'=>-1,
+			
 		);	
 		$the_query = new WP_Query( $args );
 		$i=1;
@@ -192,7 +197,7 @@ class postX extends WP_Widget {
 			}else{
 				echo'<div class="postX-img-wrap  col-md-5" >
 				<a href="'; echo the_permalink(); echo'" title="'; echo the_title_attribute(); echo'" >
-				 <div style="'.call_gradient_placeholder().'" class="post-gradient"></div>';
+				 <div style="'.sm_call_gradient_placeholder().'" class="post-gradient"></div>';
 				echo'</a></div>
 				<div class="postX-text col-md-7">';
 			}
@@ -215,13 +220,13 @@ class postX extends WP_Widget {
 				echo'<div class="entry-meta-cat meta-tooltips">';
 					//post_meta();
 					//; the_author(); echo
-					post_meta_short();
+					sm_post_meta_short();
 				echo'</div>';
 
 			}
 			
 			echo'<div class="postX-entry-summary">';
-			echo field_excerpt(get_the_ID() , get_the_excerpt(), $main[2] ,'... <a class="moretag" href="'. get_permalink(get_the_ID()) . '">'.__('[More]','somnium').'</a>');
+			echo sm_field_excerpt(get_the_ID() , get_the_excerpt(), $main[2] ,'... <a class="moretag" href="'. get_permalink(get_the_ID()) . '">'.__('[More]','somnium').'</a>');
 				
 		echo'</div>';
 		echo'</header>';
@@ -237,19 +242,22 @@ class postX extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
-
+	
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','');
+		}
 		
-		fieldProtoNumber('Excerpt lenght in words:',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
+		sm_fieldProtoNumber('Excerpt lenght in words:',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
 			
-		fieldProtoNumber('How many?',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);	
+		sm_fieldProtoNumber('How many?',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);	
 		
-		fieldProtoNumber('Posts offset',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
+		sm_fieldProtoNumber('Posts offset',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
 			
-		fieldProtoScrollRevealDes('Scroll Reveal for Left Side',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5],'For Example: enter left and move 300px over 1s after 0.5s');
+		sm_fieldProtoScrollRevealDes('Scroll Reveal for Left Side',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5],'For Example: enter left and move 300px over 1s after 0.5s');
 		
-		fieldProtoScrollRevealDes('Scroll Reveal for Right Side',$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6],'For Example: enter left and move 300px over 1s after 0.5s');
+		sm_fieldProtoScrollRevealDes('Scroll Reveal for Right Side',$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6],'For Example: enter left and move 300px over 1s after 0.5s');
 		
-		fieldProtoCategoryDropdown('Select a category', $this->get_field_name( 'in7' ), $main[7], 'name');
+		sm_fieldProtoCategoryDropdown('Select a category', $this->get_field_name( 'in7' ), $main[7], 'name');
 	
 		
 	}	
@@ -398,9 +406,9 @@ class boxX extends WP_Widget {
 				
 				if( $main[7] == 'Font Awesome Icon'){echo'<div class="icon-widget-center"><i style="font-size:'.$main[5].$main[6].'; color:'.$main[2].'" class="boxXi fa '.$main[3].'"></i></div>';}
 				
-				else if( $main[7] == 'SVG Icon' ){echo'<img alt="iconWid" class="iconWid svg" '; if(!NullEmpty($main[1])){echo'src="'.$main[1].'"';}else{echo'src="#"';} echo'/>';}
+				else if( $main[7] == 'SVG Icon' ){echo'<img alt="iconWid" class="iconWid svg" '; if(!sm_NullEmpty($main[1])){echo'src="'.$main[1].'"';}else{echo'src="#"';} echo'/>';}
 				
-				else if( $main[7] == 'Image'){echo'<img alt="iconWid" class="iconWid " '; if(!NullEmpty($main[1])){echo'src="'.$main[1].'"';}else{echo'src="#"';} echo'/>';}	
+				else if( $main[7] == 'Image'){echo'<img alt="iconWid" class="iconWid " '; if(!sm_NullEmpty($main[1])){echo'src="'.$main[1].'"';}else{echo'src="#"';} echo'/>';}	
 					
 			echo'</div>
 			<div class="boxXtitle"><h1 class="boxXtit" style="color:'.$main[13].'; font-size:'.$main[22].$main[23].'">'.$main[14].'</h1></div></div>';
@@ -413,8 +421,11 @@ class boxX extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','','','','','','','','','','','','','','','','','','');
+		}
 		
-		fieldProtoIconSelection('Icon Select',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7],array('Image','SVG Icon','Font Awesome Icon'));
+		sm_fieldProtoIconSelection('Icon Select',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7],array('Image','SVG Icon','Font Awesome Icon'));
 		echo"<script>
 	
 		
@@ -510,39 +521,39 @@ class boxX extends WP_Widget {
 		
 		<div id='trigger-add-menu".$this->get_field_id( 'in0' )."' class='button-primary' >".__('Show Settings','somnium')."</div>";
 		
-		fieldProtoImageUpload('Icon:',$this->get_field_id( 'in1' ),$this->get_field_name( 'in1' ),$main[1]);
+		sm_fieldProtoImageUpload('Icon:',$this->get_field_id( 'in1' ),$this->get_field_name( 'in1' ),$main[1]);
 	
-		fieldProtoColorPicker('Color:',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
+		sm_fieldProtoColorPicker('Color:',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
 		
-		fieldProtoIconPicker('Select Icon:',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
+		sm_fieldProtoIconPicker('Select Icon:',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
 		
-		fieldProto('Super Title:',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
+		sm_fieldProto('Super Title:',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
 			
-		fieldProtoSelectUnits('Size:',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5],$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6]);
+		sm_fieldProtoSelectUnits('Size:',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5],$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6]);
 		
-		fieldProtoColorPicker('Background Color:',$this->get_field_id( 'in10' ),$this->get_field_name( 'in10' ),$main[10]);
+		sm_fieldProtoColorPicker('Background Color:',$this->get_field_id( 'in10' ),$this->get_field_name( 'in10' ),$main[10]);
 		
-		fieldProtoSelectUnits('Border radius',$this->get_field_id( 'in11' ),$this->get_field_name( 'in11' ),$main[11],$this->get_field_id( 'in12' ),$this->get_field_name( 'in12' ),$main[12]);
+		sm_fieldProtoSelectUnits('Border radius',$this->get_field_id( 'in11' ),$this->get_field_name( 'in11' ),$main[11],$this->get_field_id( 'in12' ),$this->get_field_name( 'in12' ),$main[12]);
 		
-		fieldProto('Title:',$this->get_field_id( 'in14' ),$this->get_field_name( 'in14' ),$main[14]);
+		sm_fieldProto('Title:',$this->get_field_id( 'in14' ),$this->get_field_name( 'in14' ),$main[14]);
 		
-		fieldProtoColorPicker('Title Color:',$this->get_field_id( 'in13' ),$this->get_field_name( 'in13' ),$main[13]);
+		sm_fieldProtoColorPicker('Title Color:',$this->get_field_id( 'in13' ),$this->get_field_name( 'in13' ),$main[13]);
 		
-		fieldProtoSelectUnits('Title Size',$this->get_field_id( 'in22' ),$this->get_field_name( 'in22' ),$main[22],$this->get_field_id( 'in23' ),$this->get_field_name( 'in23' ),$main[23]);
+		sm_fieldProtoSelectUnits('Title Size',$this->get_field_id( 'in22' ),$this->get_field_name( 'in22' ),$main[22],$this->get_field_id( 'in23' ),$this->get_field_name( 'in23' ),$main[23]);
 		
-		fieldProto('Link:',$this->get_field_id( 'in21' ),$this->get_field_name( 'in21' ),$main[21]);
+		sm_fieldProto('Link:',$this->get_field_id( 'in21' ),$this->get_field_name( 'in21' ),$main[21]);
 		
-		fieldProtoSelectUnits('Padding of left/right',$this->get_field_id( 'in17' ),$this->get_field_name( 'in17' ),$main[17],$this->get_field_id( 'in18' ),$this->get_field_name( 'in18' ),$main[18]);
+		sm_fieldProtoSelectUnits('Padding of left/right',$this->get_field_id( 'in17' ),$this->get_field_name( 'in17' ),$main[17],$this->get_field_id( 'in18' ),$this->get_field_name( 'in18' ),$main[18]);
 		
-		fieldProtoSelectUnits('Padding of top/bottom',$this->get_field_id( 'in19' ),$this->get_field_name( 'in19' ),$main[19],$this->get_field_id( 'in20' ),$this->get_field_name( 'in20' ),$main[20]);	
+		sm_fieldProtoSelectUnits('Padding of top/bottom',$this->get_field_id( 'in19' ),$this->get_field_name( 'in19' ),$main[19],$this->get_field_id( 'in20' ),$this->get_field_name( 'in20' ),$main[20]);	
 		
-		fieldProtoScrollRevealDes('Scroll Reveal:',$this->get_field_id( 'in9' ),$this->get_field_name( 'in9' ),$main[9], 'For Example: enter left and move 300px over 1s after 0.5s');
+		sm_fieldProtoScrollRevealDes('Scroll Reveal:',$this->get_field_id( 'in9' ),$this->get_field_name( 'in9' ),$main[9], 'For Example: enter left and move 300px over 1s after 0.5s');
 		
-		fieldProtoSelection('Width of This Widget',$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8] ,array('8%','17%','25%','33%','50%','100%'));
+		sm_fieldProtoSelection('Width of This Widget',$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8] ,array('8%','17%','25%','33%','50%','100%'));
 		
-		fieldProtoSelection('Offset on left',$this->get_field_id( 'in15' ),$this->get_field_name( 'in15' ),$main[15],array('0%','8%','17%','25%','33%','42%','50%','58%','66%','75%','83%','92%','100%'));
+		sm_fieldProtoSelection('Offset on left',$this->get_field_id( 'in15' ),$this->get_field_name( 'in15' ),$main[15],array('0%','8%','17%','25%','33%','42%','50%','58%','66%','75%','83%','92%','100%'));
 		
-		fieldProtoSelection('Offset on right',$this->get_field_id( 'in16' ),$this->get_field_name( 'in16' ),$main[16],array('0%','8%','17%','25%','33%','42%','50%','58%','66%','75%','83%','92%','100%'));
+		sm_fieldProtoSelection('Offset on right',$this->get_field_id( 'in16' ),$this->get_field_name( 'in16' ),$main[16],array('0%','8%','17%','25%','33%','42%','50%','58%','66%','75%','83%','92%','100%'));
 		
 	}
 		

@@ -1,9 +1,9 @@
 (function($) {
 	var sl = jQuery(".icon-select option:selected" ).val();
-	console.log(sl);
+	//console.log(sl);
 
 	jQuery(document).on('widget-updated', function(e, widget){
-    console.log('sl');
+    //console.log('sl');
     // "widget" represents jQuery object of the affected widget's DOM element
 	});
 
@@ -19,6 +19,13 @@
 	});
 
 var counterX = false;	
+
+	function init_cs($this){
+		$this.find(".cs-wp-color-picker").cs_wpColorPicker();
+		console.log("init_cs");
+	}
+
+
 
 })( jQuery );
 

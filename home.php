@@ -35,7 +35,7 @@
 		
 		<?php 
 		$tst = get_theme_mod('blog-bc',get_template_directory_uri ().'/images/somnium_1920.jpg');
-		getImage($tst,1920,300);
+		echo sm_getImage($tst,1920,300);
 		echo '"';
 		if(isset($tst)){ 
 			echo' style="'.call_gradient_placeholder();

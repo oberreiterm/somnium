@@ -1,5 +1,33 @@
 (function($) {				   
 	$(window).ready(function(){
+		$('.start.form-date-picker').datepicker({ 
+			dateFormat: 'yy-mm-dd',
+			minDate : 0,
+			onSelect: function(dateText) {
+				var date = $(this).val();
+				$('.end.form-date-picker').datepicker( "destroy" );
+				$('.end.form-date-picker').datepicker({ 
+					dateFormat: 'yy-mm-dd',
+					minDate : date
+				});
+			}
+		});
+		
+		$('.end.form-date-picker').datepicker({ 
+			dateFormat: 'yy-mm-dd',
+			minDate : 0,
+			onSelect: function(dateText) {
+				var datex = $(this).val();
+				$('.start.form-date-picker').datepicker( "destroy" );
+				$('.start.form-date-picker').datepicker({ 
+					dateFormat: 'yy-mm-dd',
+					minDate : 0,
+					maxDate : datex
+				});
+			}
+		});
+	
+	
 		/*
 		* FullPage.js initialization
 		*/
@@ -886,10 +914,14 @@
             }, 'xml');
         });
 	});
-	/*
-	* Scroll up/down menu effects
-	*/
+
 	$(window).load(function() {
+		
+	
+	
+		/*
+		* Scroll up/down menu effects
+		*/
 		var lastScrollTop = 0;
 		if(customizer.header_type=='scrollUp'){
 			$(window).scroll(function(event){
@@ -925,6 +957,13 @@
 				}
 				lastScrollTopX = stX;
 			});
+		}
+		
+		//console.log(window.location.href);
+		if(window.location.href.indexOf("reservation_post") !== -1){
+			var sc = $("#reservation").offset().top;
+			$("html,body").scrollTop(sc-50);
+			//console.log($("#reservation").offset().top);
 		}
 	});	
 	/*

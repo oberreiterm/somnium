@@ -11,19 +11,24 @@ class sl_wid extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','','','');
+		}
 		echo $args['before_widget']; 
-		if(NullEmpty($main[6])){$bckS=call_gradient_placeholder();}else{$bckS = 'background-image:url('.$main[6].')';}
+		if(sm_NullEmpty($main[6])){$bckS=sm_call_gradient_placeholder();}else{$bckS = 'background-image:url('.$main[6].')';}
 		echo'<div class="cst-sl" style="'.$bckS.'">';
 		if('on' == $instance['in10']){
 			$checkb = 'contr';
 		}else{$checkb = '';} 
 		echo'<div class="cst-sl-inner '.$checkb.'">';
 		echo'<h1 style="color:'.$main[3].'" class="slider-title"><span>'.$main[0].'</span></h1>
-				<h3 style="color:'.$main[5].'"  class="slider-descr"><span>'.$main[4].'</span></h3>
-				<div class="buttons">
-					<a href="'.$main[9].'" class=" custom-button" style="color:'.$main[8].'; border-color:'.$main[8].'">'.$main[7].'</a>
-				</div>
-			</div></div>';					
+				<h3 style="color:'.$main[5].'"  class="slider-descr"><span>'.$main[4].'</span></h3>';
+				if($main[7] !=''){
+					echo'<div class="buttons">
+						<a href="'.$main[9].'" class=" custom-button" style="color:'.$main[8].'; border-color:'.$main[8].'">'.$main[7].'</a>
+					</div>';
+				}
+			echo'</div></div>';					
 	}		
 
 	public function form( $instance ) {
@@ -31,23 +36,27 @@ class sl_wid extends WP_Widget {
 			$main[$i] = $instance['in'.$i];			
 		}
 
-		fieldProto('Title:',$this->get_field_id( 'in0' ),$this->get_field_name( 'in0' ),$main[0]);
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','','','');
+		}
+		
+		sm_fieldProto('Title:',$this->get_field_id( 'in0' ),$this->get_field_name( 'in0' ),$main[0]);
 
-		fieldProtoColorPicker('Title Color',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
+		sm_fieldProtoColorPicker('Title Color',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
 		
-		fieldProto('Description',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
+		sm_fieldProto('Description',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
 		
-		fieldProtoColorPicker('Description Color',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5]);
+		sm_fieldProtoColorPicker('Description Color',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5]);
 		
-		fieldProtoImageUpload('Background Image',$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6]);
+		sm_fieldProtoImageUpload('Background Image',$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6]);
 		
-		fieldProtoCheckbox('Display Contrasting Layer',$this->get_field_id( 'in10' ),$this->get_field_name( 'in10' ),$main[10]);
+		sm_fieldProtoCheckbox('Display Contrasting Layer',$this->get_field_id( 'in10' ),$this->get_field_name( 'in10' ),$main[10]);
 		
-		fieldProto('Button Title',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7]);
+		sm_fieldProto('Button Title',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7]);
 		
-		fieldProtoColorPicker('Button Color',$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8]);
+		sm_fieldProtoColorPicker('Button Color',$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8]);
 		
-		fieldProto('Button URL',$this->get_field_id( 'in9' ),$this->get_field_name( 'in9' ),$main[9]);
+		sm_fieldProto('Button URL',$this->get_field_id( 'in9' ),$this->get_field_name( 'in9' ),$main[9]);
 
 	}
 
@@ -83,6 +92,9 @@ class html_vid_wid extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','','','');
+		}
 		echo $args['before_widget'];
 		if(isMobile() == false && 'on' == $instance['in2'] || isMobile() == true && 'on' == $instance['in1']  ){
 			echo'<div  class="cst-sl " >';
@@ -92,11 +104,13 @@ class html_vid_wid extends WP_Widget {
 			echo'<div class="cst-sl-inner '.$checkb.'">';
 			echo'<div class="cst-sl-inner cst-sl-html5" style="background-image:url('.$main[6].')">
 				<h1 style="color:'.$main[3].'" class="slider-title"><span>'.$main[0].'</span></h1>
-				<h3 style="color:'.$main[5].'"  class="slider-descr"><span>'.$main[4].'</span></h3>
-				<div class="buttons">
+				<h3 style="color:'.$main[5].'"  class="slider-descr"><span>'.$main[4].'</span></h3>';
+				if($main[7] !=''){
+					echo'<div class="buttons">
 					<a href="'.$main[9].'" class=" custom-button " style="color:'.$main[8].'; border-color:'.$main[8].'">'.$main[7].'</a>
-				</div>
-			</div>
+				</div>';
+				}	
+			echo'</div>
 			<video class="html5vid" autoplay muted loop poster="'.$main[10].'">';
 				if( !empty($main[11]) ): echo'<source src="'.$main[11].'" type="video/webm">';endif; 
 				if( !empty($main[12]) ): echo'<source src="'.$main[12].'" type="video/mp4">';endif;
@@ -133,52 +147,54 @@ class html_vid_wid extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','','','','','','','','','','','','','','','','');
+		}
+		sm_fieldProto('Title:',$this->get_field_id( 'in0' ),$this->get_field_name( 'in0' ),$main[0]);
 
-		fieldProto('Title:',$this->get_field_id( 'in0' ),$this->get_field_name( 'in0' ),$main[0]);
+		sm_fieldProtoCheckbox('Show on mobile?',$this->get_field_id( 'in1' ),$this->get_field_name( 'in1' ),$main[1]);
 
-		fieldProtoCheckbox('Show on mobile?',$this->get_field_id( 'in1' ),$this->get_field_name( 'in1' ),$main[1]);
+		sm_fieldProtoCheckbox('Show on desktop?',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
 
-		fieldProtoCheckbox('Show on desktop?',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
-
-		fieldProtoColorPicker('Title Color',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
+		sm_fieldProtoColorPicker('Title Color',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
 		
-		fieldProto('Description',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
+		sm_fieldProto('Description',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
 		
-		fieldProtoColorPicker('Description Color',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5]);
+		sm_fieldProtoColorPicker('Description Color',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5]);
 		
-		fieldProtoImageUpload('Background Image',$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6]);
+		sm_fieldProtoImageUpload('Background Image',$this->get_field_id( 'in6' ),$this->get_field_name( 'in6' ),$main[6]);
 		
-		fieldProtoCheckbox('Display Contrasting Layer',$this->get_field_id( 'in19' ),$this->get_field_name( 'in19' ),$main[19]);
+		sm_fieldProtoCheckbox('Display Contrasting Layer',$this->get_field_id( 'in19' ),$this->get_field_name( 'in19' ),$main[19]);
 		
-		fieldProto('Button Title',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7]);
+		sm_fieldProto('Button Title',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7]);
 		
-		fieldProtoColorPicker('Button Color',$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8]);
+		sm_fieldProtoColorPicker('Button Color',$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8]);
 		
-		fieldProto('Button URL',$this->get_field_id( 'in9' ),$this->get_field_name( 'in9' ),$main[9]);
+		sm_fieldProto('Button URL',$this->get_field_id( 'in9' ),$this->get_field_name( 'in9' ),$main[9]);
 		
 		echo'<h2>';_e( 'Video','somnium' );echo'</h2>';
 		echo'<h4>'; _e( 'Choose One or More Video Formats','somnium' ); echo'</h4>';
 		echo'<p>';_e( 'Fields with Undesired Video Formats Leave Blank','somnium' );echo'</p>';
 		
-		fieldProtoImageUpload('First Frame of the Video (HTML)',$this->get_field_id( 'in10' ),$this->get_field_name( 'in10' ),$main[10]);
+		sm_fieldProtoImageUpload('First Frame of the Video (HTML)',$this->get_field_id( 'in10' ),$this->get_field_name( 'in10' ),$main[10]);
 		
-		fieldProto('WebM Video URL',$this->get_field_id( 'in11' ),$this->get_field_name( 'in11' ),$main[11]);
+		sm_fieldProto('WebM Video URL',$this->get_field_id( 'in11' ),$this->get_field_name( 'in11' ),$main[11]);
 		
-		fieldProto('MP4 Video URL',$this->get_field_id( 'in12' ),$this->get_field_name( 'in12' ),$main[12]);
+		sm_fieldProto('MP4 Video URL',$this->get_field_id( 'in12' ),$this->get_field_name( 'in12' ),$main[12]);
 		
-		fieldProto('OGG Video URL',$this->get_field_id( 'in13' ),$this->get_field_name( 'in13' ),$main[13]);
+		sm_fieldProto('OGG Video URL',$this->get_field_id( 'in13' ),$this->get_field_name( 'in13' ),$main[13]);
 		
 		echo'<h2>'; _e( 'Youtube','somnium' ); echo' </h2>';
 		
-		fieldProtoDes('Unique Youtube Video Code',$this->get_field_id( 'in14' ),$this->get_field_name( 'in14' ),$main[14],'For Example (Input the Bold Section): youtube.com/watch?v=<b>cbut2K6zvJY</b></p>');
+		sm_fieldProtoDes('Unique Youtube Video Code',$this->get_field_id( 'in14' ),$this->get_field_name( 'in14' ),$main[14],'For Example (Input the Bold Section): youtube.com/watch?v=<b>cbut2K6zvJY</b></p>');
 		
-		fieldProtoCheckbox('Loop Video?',$this->get_field_id( 'in15' ),$this->get_field_name( 'in15' ),$main[15]);
+		sm_fieldProtoCheckbox('Loop Video?',$this->get_field_id( 'in15' ),$this->get_field_name( 'in15' ),$main[15]);
 		
-		fieldProtoCheckbox('Mute Video?',$this->get_field_id( 'in16' ),$this->get_field_name( 'in16' ),$main[16]);
+		sm_fieldProtoCheckbox('Mute Video?',$this->get_field_id( 'in16' ),$this->get_field_name( 'in16' ),$main[16]);
 		
-		fieldProtoSelection('Quality Settings',$this->get_field_id( 'in17' ),$this->get_field_name( 'in17' ),$main[17],array('360p', '480p', '720p', '1080p'));
+		sm_fieldProtoSelection('Quality Settings',$this->get_field_id( 'in17' ),$this->get_field_name( 'in17' ),$main[17],array('360p', '480p', '720p', '1080p'));
 		
-		fieldProtoSelection('Aspect Ratio of YT Video',$this->get_field_id( 'in18' ),$this->get_field_name( 'in18' ),$main[18],array('16:9', '2.35:1', '4:3'));
+		sm_fieldProtoSelection('Aspect Ratio of YT Video',$this->get_field_id( 'in18' ),$this->get_field_name( 'in18' ),$main[18],array('16:9', '2.35:1', '4:3'));
 
 	}
 
@@ -210,6 +226,9 @@ class sl_q_wid extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','','','');
+		}
 		echo $args['before_widget'];
 		if(''==$main[5]){$main[5]=1;}
 		if(''==$main[3]){$main[3]='Explore';}
@@ -225,13 +244,13 @@ class sl_q_wid extends WP_Widget {
 		// The Loop
 		if ( $the_query->have_posts() ) {	
 			$the_query->the_post();
-			if(NullEmpty($main[7])){
+			if(sm_NullEmpty($main[7])){
 				if(has_post_thumbnail()){
-					$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(1920, 1080) , false, ''  );
+					$img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), array(1920, 1080) , false, ''  );
 					echo '<div  class="cst-sl" style="background-image:url('. $img[0] . ')">';
 				}
 				else{
-					echo '<div  class="cst-sl" style="'.call_gradient_placeholder().'">';
+					echo '<div  class="cst-sl" style="'.sm_call_gradient_placeholder().'">';
 				}
 			}else{
 				echo '<div  class="cst-sl" style="background-image:url('. $main[7] . ')">';
@@ -242,7 +261,7 @@ class sl_q_wid extends WP_Widget {
 			echo'<div class="cst-sl-inner '.$checkb.'">';
 			echo'<h1 style="color:'.$main[0].'" class="slider-title"><span>' . get_the_title() . '</span></h1>';
 			echo'<h3 style="color:'.$main[1].'"  class="slider-descr"><span>';
-			echo field_excerpt(get_the_ID() , get_the_excerpt(), $main[2]) .'</span></h3>
+			echo sm_field_excerpt(get_the_ID() , get_the_excerpt(), $main[2]) .'</span></h3>
 			<div class="buttons"><a href="' . get_permalink() . '" class=" custom-button " style="color:'.$main[4].'; border-color:'.$main[4].'">'.$main[3].'</a></div></div>';
 			echo'</div>'; 
 		}			
@@ -252,23 +271,26 @@ class sl_q_wid extends WP_Widget {
 		for($i=0;isset($instance['in'.$i ]);$i++){
 			$main[$i] = $instance['in'.$i];			
 		}
-		fieldProtoColorPicker('Title Color:',$this->get_field_id( 'in0' ),$this->get_field_name( 'in0' ),$main[0]);
+		if(!isset($main)){
+			$main = array('','','','','','','','','','','','','');
+		}		
+		sm_fieldProtoColorPicker('Title Color:',$this->get_field_id( 'in0' ),$this->get_field_name( 'in0' ),$main[0]);
 			
-		fieldProtoColorPicker('Description Color:',$this->get_field_id( 'in1' ),$this->get_field_name( 'in1' ),$main[1]);
+		sm_fieldProtoColorPicker('Description Color:',$this->get_field_id( 'in1' ),$this->get_field_name( 'in1' ),$main[1]);
 			
-		fieldProtoNumber('Number of Description Excerpt Words:',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
+		sm_fieldProtoNumber('Number of Description Excerpt Words:',$this->get_field_id( 'in2' ),$this->get_field_name( 'in2' ),$main[2]);
 			
-		fieldProto('Button Title:',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
+		sm_fieldProto('Button Title:',$this->get_field_id( 'in3' ),$this->get_field_name( 'in3' ),$main[3]);
 			
-		fieldProtoColorPicker('Button Color:',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
+		sm_fieldProtoColorPicker('Button Color:',$this->get_field_id( 'in4' ),$this->get_field_name( 'in4' ),$main[4]);
 		
-		fieldProtoCheckbox('Display Contrasting Layer',$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8]);
+		sm_fieldProtoCheckbox('Display Contrasting Layer',$this->get_field_id( 'in8' ),$this->get_field_name( 'in8' ),$main[8]);
 		
-		fieldProtoImageUploadDes('Optional Background Image',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7],'If left blank, thumbnail will be used');
+		sm_fieldProtoImageUploadDes('Optional Background Image',$this->get_field_id( 'in7' ),$this->get_field_name( 'in7' ),$main[7],'If left blank, thumbnail will be used');
 			
-		fieldProtoNumberDes('Number in a sequence (descending order):',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5],'1 = first post, 2 = second post');
+		sm_fieldProtoNumberDes('Number in a sequence (descending order):',$this->get_field_id( 'in5' ),$this->get_field_name( 'in5' ),$main[5],'1 = first post, 2 = second post');
 		
-		fieldProtoCategoryDropdown('Select a category',$this->get_field_name( 'in6' ),$main[6],'name');
+		sm_fieldProtoCategoryDropdown('Select a category',$this->get_field_name( 'in6' ),$main[6],'name');
 	}
 
 	public function update( $new_instance, $old_instance ) {

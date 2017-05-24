@@ -2,12 +2,10 @@
 <html <?php language_attributes(); ?>> 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<title><?php wp_title('&raquo;','true','right');?></title>	
-
-	<?php echo'<script>function initMap(){}</script>';
+<?php 
+	echo'<script>function initMap(){}</script>';
 	
+
 	wp_head(); ?>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<?php

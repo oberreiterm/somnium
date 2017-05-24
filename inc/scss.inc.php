@@ -1649,7 +1649,7 @@ class scssc {
 		if (isset($this->importCache[$realPath])) {
 			$tree = $this->importCache[$realPath];
 		} else {
-			$code = read_file($path);
+			$code = sm_read_file($path);
 			$parser = new scss_parser($path, false);
 			$tree = $parser->parse($code);
 			$this->parsedFiles[] = $path;
@@ -4427,7 +4427,7 @@ class scss_server {
 		// look for modified imports
 		$icache = $this->importsCacheName($out);
 		if (is_readable($icache)) {
-			$imports = unserialize(read_file($icache));
+			$imports = unserialize(sm_read_file($icache));
 			foreach ($imports as $import) {
 				if (filemtime($import) > $mtime) return true;
 			}
@@ -4465,7 +4465,7 @@ class scss_server {
 	 */
 	protected function compile($in, $out) {
 		$start = microtime(true);
-		$css = $this->scss->compile(read_file($in), $in);
+		$css = $this->scss->compile(sm_read_file($in), $in);
 		$elapsed = round((microtime(true) - $start), 4);
 
 		$v = scssc::$VERSION;
@@ -4526,7 +4526,7 @@ class scss_server {
 			$lastModified  = gmdate('D, d M Y H:i:s', $mtime) . ' GMT';
 			header('Last-Modified: ' . $lastModified);
 
-			echo read_file($output);
+			echo sm_read_file($output);
 
 			return;
 		}

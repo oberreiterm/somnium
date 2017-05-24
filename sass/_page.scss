@@ -1,6 +1,7 @@
 @import 'variables';
 
-.section_wid > .container{padding-top:0px;}
+.section_wid > .container{
+}
 
 .page-title{
 	text-align: left;
@@ -190,10 +191,10 @@ h3.comment-reply-title{
     right: 0px;
     background: $content-highlight-color;
     color: white;
-    padding: 10px;
+    padding: 10px 2px;
     top: -2px;
-    margin-top:2px;
-    width: 73px;
+    margin-top: 2px;
+    width: 72px;
 	h2{
 		margin: 0px;
 		width: 100%;
@@ -236,12 +237,11 @@ h3.comment-reply-title{
  .white-text{
 	font-family: $heading-font;
     font-size: 50px;
-    text-transform: uppercase;
 	margin-top: 0px;
     padding-top: 20px;
 	margin-bottom: 0px;
     padding-bottom: 20px;
-	color:black;
+	color:$content-highlight-color;
  }
  
  h6.white-text{
@@ -270,6 +270,9 @@ h3.comment-reply-title{
 	position:relative;
     height: 600px;
 	max-height: 100vh;
+	background-size: cover;
+    background-position-x: center;
+    background-position-y: 50%;
 }
 
 .outer-container-title{
@@ -549,7 +552,6 @@ h3.comment-reply-title{
     line-height: 24px;
     text-decoration: none;
     color: white;
-    text-transform: uppercase;
     font-size: 11px;
 }
 .comments-title{

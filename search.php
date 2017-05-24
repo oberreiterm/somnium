@@ -5,11 +5,11 @@
  
 
 <div class="bc-container-post" data-parallax="scroll" data-image-src="<?php 
-		$tst = get_theme_mod('search-bc',get_template_directory_uri ().'/images/somnium_1920.jpg');
-		getImage($tst,1920,300);
+		$tstR = get_theme_mod('search-bc',get_template_directory_uri ().'/images/somnium_1920.jpg');
+		echo $tstR;
 		echo '"';
-		if(isset($tst)){ 
-			echo' style="'.call_gradient_placeholder();
+		if(isset($tstR)){ 
+			echo' style="'.sm_call_gradient_placeholder();
 		}
 		?>" >
 	

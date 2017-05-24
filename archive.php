@@ -3,12 +3,14 @@
 <div class="clear"></div>
 
 	
-		<div class="bc-container-post" data-parallax="scroll" data-image-src="<?php 
-		$tst = get_theme_mod('archive-bc',get_template_directory_uri ().'/images/somnium_1920.jpg');
-		getImage($tst,1920,300);
+		<div class="bc-container-post" data-parallax="scroll" data-image-src="
+		<?php 
+		$tstX = get_theme_mod('archive-bc',get_template_directory_uri ().'/images/somnium_1920.jpg');
+		echo $tstX;
 		echo '"';
-		if(isset($tst)){ 
-			echo' style="'.call_gradient_placeholder();
+		if(isset($tstX)){ 
+			
+			echo' style="'.sm_call_gradient_placeholder();
 		}
 		?>" >
 	

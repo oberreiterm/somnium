@@ -1,9 +1,9 @@
 <?php
-	function call_gradient_placeholder(){
+	function sm_call_gradient_placeholder(){
 	    $thiss = 'background: linear-gradient(to left top, rgb(194, 194, 194), rgb(242, 242, 242));';
 		return $thiss;
 	}	
-	function field_excerpt($id, $text, $words, $more='...') {
+	function sm_field_excerpt($id, $text, $words, $more='...') {
 		global $post;
 		if(''==$words){$words=20;}
 		if ( '' != $text ) {
@@ -21,15 +21,15 @@
 		return $text;
 	}
 	
-	function custom_excerpt_length( $length ) {
+	function sm_custom_excerpt_length( $length ) {
 	return 100;
 	}
-	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+	add_filter( 'excerpt_length', 'sm_custom_excerpt_length', 999 );
 
 	
-	add_filter('pre_get_posts', 'mytheme_blogpostcount_filter');
+	add_filter('pre_get_posts', 'sm_blogpostcount_filter');
 	// Set the posts per page on the home page
-	function mytheme_blogpostcount_filter($query) {
+	function sm_blogpostcount_filter($query) {
 		$Ppages = get_theme_mod('query_posts',10);
 		if ( $query->is_search() && $query->is_main_query() ) {
 			$query->set('posts_per_page', $Ppages);
@@ -47,7 +47,7 @@
 	* Adds Open Graph Protocol and charset
 	* Since 0.7.1.2
 	*/
-	function add_metaX() {
+	function sm_add_metaX() {
 		echo'<meta charset="'.get_bloginfo('charset').'">';
 		if (is_single()){
 			global $post;
@@ -55,7 +55,7 @@
 			$author = get_the_author_meta('user_nicename', $post->post_author);
 			echo'<meta name="author" content="'.$author.'">';
 			
-			$desc = field_excerpt($post->ID , $post->post_content, 30,'...');
+			$desc = sm_field_excerpt($post->ID , $post->post_content, 30,'...');
 			echo'<meta name="description" content="'.$desc.'" />'; 
 			
 			if(has_post_thumbnail($post->ID)) {
@@ -71,7 +71,7 @@
 			echo'<meta property="og:description" content="'.get_bloginfo('description').'">';
 		}
 	}
-	add_action( 'wp_enqueue_scripts', 'add_metaX' );	
+	add_action( 'wp_enqueue_scripts', 'sm_add_metaX' );	
 
 function somnium_paging_nav() {
 	// Don't print empty markup if there's only one page.
@@ -120,13 +120,15 @@ function somnium_paging_nav() {
 }
 
 
-	function theme_setup(){
+	function sm_theme_setup(){
 		// Various sizes of thumbnails
+		 add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'post-thumbnaiXX', 1920, 1080, true);
 		add_image_size( 'post-thumbnaiXXX', 1920, 300, true);
 		add_image_size( 'post-thumbnaiX', 1280, 500, true);
 		add_image_size( 'post-thumbnail2', 960, 400, true);
+		add_image_size( 'post-thumbnailds', 480, 270, true);
 		add_image_size('post-thumbnail', 432, 360, true);
 		add_image_size('post-thumbnail3', 300, 300, true);
 		add_image_size('post-thumbnail4', 255, 300, true);
@@ -139,18 +141,18 @@ function somnium_paging_nav() {
 		// Loading languages in .mo format
 		load_theme_textdomain('somnium', get_template_directory() . '/languages/');
 	}
-	add_action('after_setup_theme', 'theme_setup');
+	add_action('after_setup_theme', 'sm_theme_setup');
 
 	// Replaces the excerpt "more" text by a link
-	function new_excerpt_more($more) {
+	function sm_new_excerpt_more($more) {
 		global $post;
 		return '<a class="moretag" href="'. get_permalink(get_the_ID()) . '">... '.__('[More]','somnium').'</a>';
 	}
-	add_filter('excerpt_more', 'new_excerpt_more');
+	add_filter('excerpt_more', 'sm_new_excerpt_more');
 	
 	
 	//Custom fields for content page
-	function getCustomField($theField) {
+	function sm_getCustomField($theField) {
 		global $post;
 		$block = get_post_meta($post->ID, $theField);
 		if($block){
@@ -160,11 +162,11 @@ function somnium_paging_nav() {
 		}
 	}
 	
-	function cc_mime_types($mimes) {
+	function sm_cc_mime_types($mimes) {
 		$mimes['svg'] = 'image/svg+xml';
 		return $mimes;
 	}
-	add_filter('upload_mimes', 'cc_mime_types');
+	add_filter('upload_mimes', 'sm_cc_mime_types');
 	
 	// Enqueueing stylesheets and scripts
 	function somnium_scripts(){
@@ -178,7 +180,8 @@ function somnium_paging_nav() {
 		wp_enqueue_script( 'libs-script',  get_template_directory_uri(). '/js/libs.min.js',  array('jquery') );
 		
 		
-
+		wp_enqueue_script( 'jquery-ui-datepicker' );
+		
 	
 	}
 	add_action('wp_enqueue_scripts', 'somnium_scripts');
@@ -205,10 +208,10 @@ function somnium_paging_nav() {
      $file       = basename( parse_url( $uri, PHP_URL_PATH ) );
 
     if ( $uri && in_array( $file, array( 'widgets.php' ) ) && is_admin() ) {
-		 hook_pickers();
+		 sm_hook_pickers();
 	}
 	if ( $uri && in_array( $file, array( 'customize.php' ) ) && is_admin() ) {
-		 hook_pickers();
+		 sm_hook_pickers();
 	}
 	
 	function somnium_widgets_init() {
@@ -327,5 +330,3 @@ function somnium_paging_nav() {
 	}
 	add_action( 'widgets_init', 'somnium_widgets_init' );
 	
-	
-

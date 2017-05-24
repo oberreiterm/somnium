@@ -11,12 +11,19 @@ if($sidebar == 'none'){
 				include get_template_directory() . "/parts/slider.php";
 			endif;
 			if ( 'posts' == get_option('show_on_front') ) {
-				dynamic_sidebar( 'sidebar-section' );
-				$sidN = intval($sidN);
-				for($i=0;$i<$sidN; $i++){
-					$iR = $i + 2;
-					dynamic_sidebar( 'sidebar-section-'.$iR );
-				}
+				if(is_active_sidebar( 'sidebar-section' )){
+					dynamic_sidebar( 'sidebar-section' );
+					$sidN = intval($sidN);
+					for($i=0;$i<$sidN; $i++){
+						$iR = $i + 2;
+						dynamic_sidebar( 'sidebar-section-'.$iR );
+					}
+				}else{
+					the_widget('sc_wid');
+					the_widget('postX');
+					the_widget('sc_end');
+					the_widget('callToAc_wid');
+				}			
 			}else if ( 'page' == get_option('show_on_front') ) {
 				get_template_part( 'page' ); 
 			}

@@ -22,7 +22,7 @@
 		$credits= get_theme_mod('footer-theme-display',1);
 		$copy = get_theme_mod('footer_copyright','Somnium');
 		$copyY = get_theme_mod('footer_copyright_y');
-		if(NullEmpty($copy)){$copy=$theme->get( 'Name' );}
+		if(sm_NullEmpty($copy)){$copy=$theme->get( 'Name' );}
 			echo'<div class="copyright">'.$copy.' | © '; if(date('Y')== $copyY || ''== $copyY){echo date('Y');} else{echo $copyY.'–'.date('Y');} echo'<br>'; 
 			if($credits==1){
 				esc_html_e( 'Powered by','somnium');
